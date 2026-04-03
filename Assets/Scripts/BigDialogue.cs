@@ -74,7 +74,7 @@ public class BigDialogue : MonoBehaviour
         }
         else
         {
-            player.state = Player.State.Standard;
+            player.state = player.initialState;
             Destroy(gameObject);
         }
     }

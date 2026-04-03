@@ -61,7 +61,7 @@ public class Dialogue : MonoBehaviour
             {
                 interactableObject.interactable = true;
             }
-            player.state = Player.State.Standard;
+            player.state = player.initialState;
             Destroy(gameObject);
         }
     }

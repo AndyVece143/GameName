@@ -10,6 +10,7 @@ public class BigDialogueTrigger : MonoBehaviour
     public string[] lines;
     public bool[] changes;
     public bool talker;
+    public int react;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +27,7 @@ public class BigDialogueTrigger : MonoBehaviour
             return;
         }
         
-        player.StopMoving();
+        player.StopMoving(react);
         player.state = Player.State.NoMove;
         BigDialogue newBigDialogue = Instantiate(bigDialogue);
         newBigDialogue.lines = lines;

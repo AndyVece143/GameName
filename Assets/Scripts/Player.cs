@@ -19,16 +19,24 @@ public class Player : MonoBehaviour
         RealWorld,
     }
     public State state;
+    public State initialState;
+
+    public Animator anim;
+
+    public SpriteRenderer thoughtBubble;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
+        thoughtBubble.enabled = false;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        state = State.Standard;
+        //state = State.Standard;
+        initialState = state;
     }
 
     // Update is called once per frame
@@ -107,12 +115,24 @@ public class Player : MonoBehaviour
 
     private void RealWorldMovement()
     {
+        anim.SetInteger("react", 0);
+
         float horizontalInput = Input.GetAxis("Horizontal");
 
         body.linearVelocity = new Vector2((horizontalInput * speed) / 2, body.linearVelocity.y);
 
         //Flip Sprite
+        if (horizontalInput > 0.01f)
+        {
+            transform.localScale = Vector3.one;
+        }
 
+        else if (horizontalInput < -0.01f)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        anim.SetBool("move", horizontalInput != 0);
     }
 
     public bool IsGrounded()
@@ -121,8 +141,26 @@ public class Player : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-    public void StopMoving()
+    public void StopMoving(int react)
     {
         body.linearVelocity = new Vector2(0, 0);
+        anim.SetInteger("react", react);
+        thoughtBubble.enabled = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Interact")
+        {
+            thoughtBubble.enabled = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Interact")
+        {
+            thoughtBubble.enabled = false;
+        }
     }
 }

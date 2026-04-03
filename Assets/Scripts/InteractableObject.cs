@@ -8,6 +8,7 @@ public class InteractableObject : MonoBehaviour
 
     public bool interactable;
     public BoxCollider2D boxCollider;
+    public int react;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,12 +23,14 @@ public class InteractableObject : MonoBehaviour
     {
         if (boxCollider.IsTouching(player.boxCollider) && player.IsGrounded())
         {
+            //player.thoughtBubble.enabled = true;
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
                 if (interactable == true)
                 {
+                    //player.thoughtBubble.enabled = false;
                     interactable = false;
-                    player.StopMoving();
+                    player.StopMoving(react);
                     player.state = Player.State.NoMove;
 
                     Dialogue newDialogue = Instantiate(dialogue);
