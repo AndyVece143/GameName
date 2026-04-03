@@ -155,6 +155,110 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &70513224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70513227}
+  - component: {fileID: 70513226}
+  - component: {fileID: 70513225}
+  m_Layer: 0
+  m_Name: Big Dialogue Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &70513225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70513224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf16c3cf9779a448bf8015237a39bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BigDialogueTrigger
+  bigDialogue: {fileID: 6822750942231247413, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+  boxCollider: {fileID: 70513226}
+  player: {fileID: 0}
+  triggered: 0
+  lines:
+  - Hello, my name is Drip Adachi, and I am from Persona 4 and Persona 4 Golden.
+  - Enel, also known as Eneru is a major antagonist in the anime/manga series, One
+    Piece.
+  - 'Wow, what a cool introduction. It sounds like it came from a wiki. '
+  - I wish I could say something that cool.
+  - You never will. Now I will destroy this dialogue box!
+  changes: 0001010001
+  talker: 1
+--- !u!61 &70513226
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70513224}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &70513227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70513224}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.59, y: -1.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &257644039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,6 +2326,144 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   pauseMenuUI: {fileID: 1259857888}
   regularUI: {fileID: 32633066}
+--- !u!1001 &4982513765829639874
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 18560674924410925, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: isActiveSpeaker
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1086432406875439219, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_Name
+      value: Big Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1086432406875439219, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783418575714356718, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 6822750942231247413, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: baseColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822750942231247413, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: darkColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822750942231247413, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: lines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822750942231247413, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: 'lines.Array.data[0]'
+      value: Hello, my name is Drip Adachi. I am from Persona 4.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822750942231247413, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: 'lines.Array.data[1]'
+      value: Hey ya, my name is Enel, from One Piece.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822750942231247413, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: 'lines.Array.data[2]'
+      value: No! You're lying to me! I don't like liars!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822750942231247413, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: 'lines.Array.data[3]'
+      value: Enel, also known as Eneru is a major antagonist in the anime/manga series,
+        One Piece.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794879901196116929, guid: 06efdedda4c78d742a7532094a922827, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06efdedda4c78d742a7532094a922827, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2233,3 +2475,5 @@ SceneRoots:
   - {fileID: 2123287689}
   - {fileID: 257644042}
   - {fileID: 1377028674}
+  - {fileID: 4982513765829639874}
+  - {fileID: 70513227}
