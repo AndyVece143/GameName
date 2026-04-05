@@ -272,6 +272,8 @@ MonoBehaviour:
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   darkColor: {r: 0.4292453, g: 0.4292453, b: 0.4292453, a: 1}
   duration: 0.25
+  moveDuration: 1
+  textBox: {fileID: 1904802425448496785}
 --- !u!1 &1904802425448496785
 GameObject:
   m_ObjectHideFlags: 0

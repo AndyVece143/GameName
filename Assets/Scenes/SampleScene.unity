@@ -190,12 +190,12 @@ MonoBehaviour:
   player: {fileID: 0}
   triggered: 0
   lines:
-  - Hello, my name is Drip Adachi, and I am from Persona 4 and Persona 4 Golden.
-  - Enel, also known as Eneru is a major antagonist in the anime/manga series, One
-    Piece.
-  - 'Wow, what a cool introduction. It sounds like it came from a wiki. '
-  - I wish I could say something that cool.
-  - You never will. Now I will destroy this dialogue box!
+  - Oh my god, we slide into frame now. That's awesome! What cool polish.
+  - Not as cool as this week's chapter of One Piece. Dude, they finally revealed-
+  - SHUT UP! I haven't read it yet! No spoilers! Don't be that person.
+  - Besides, you haven't been in the manga since chapter 298. You're not relevant
+    anymore.
+  - Curse you drip adachi! Now I'm gonna make everything slide out of frame now!
   changes: 0001010001
   talker: 1
   react: 1
@@ -1400,9 +1400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
   player: {fileID: 0}
   dialogueLines:
-  - Okay cool. so you have the protagonist animated in the game. Awesome.
-  - And she can tell what you can interact with? Superb.
-  - Hopefully brawl jerma can be replaced with a real object soon!
+  - What was their problem? Why start an argument over something so trivial?
+  - Eh, whatever. I, brawl jerma, will stay chill.
+  - One Piece is crazy good this week.
   dialogue: {fileID: 4880091693724806556, guid: 62d50072b0d625941a6595fb63798fc9, type: 3}
   interactable: 0
   boxCollider: {fileID: 0}

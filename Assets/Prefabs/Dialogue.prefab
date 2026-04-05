@@ -335,7 +335,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textComponent: {fileID: 2736775087710383151}
   lines: []
-  textSpeed: 0.05
+  textSpeed: 0.01
   player: {fileID: 0}
   canvas: {fileID: 0}
   interactableObject: {fileID: 0}
+  textBox: {fileID: 1654504439330404648}
+  duration: 0.75

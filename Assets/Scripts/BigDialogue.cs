@@ -24,6 +24,17 @@ public class BigDialogue : MonoBehaviour
     public Color baseColor;
     public Color darkColor;
     public float duration;
+    public float moveDuration;
+
+    private Vector3 character1Position;
+    private Vector3 character2Position;
+
+    public GameObject textBox;
+    private Vector3 textBoxPosition;
+
+    private Vector3 character1EndPosition;
+    private Vector3 character2EndPosition;
+    private Vector3 textBoxEndPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,7 +44,8 @@ public class BigDialogue : MonoBehaviour
         player = Player.FindAnyObjectByType<Player>();
         textComponent.text = string.Empty;
         BeginningSprite();
-        StartDialogue();
+        SetPositions();
+        //StartDialogue();
     }
 
     // Update is called once per frame
@@ -74,8 +86,9 @@ public class BigDialogue : MonoBehaviour
         }
         else
         {
-            player.state = player.initialState;
-            Destroy(gameObject);
+            StartCoroutine(MoveSpritesEnd());
+            //player.state = player.initialState;
+            //Destroy(gameObject);
         }
     }
 
@@ -109,6 +122,23 @@ public class BigDialogue : MonoBehaviour
             StartCoroutine(ChangeSprite(true, character1));
             StartCoroutine(ChangeSprite(false, character2));
         }
+    }
+
+    void SetPositions()
+    {
+        character1Position = character1.transform.position;
+        character2Position = character2.transform.position;
+        textBoxPosition = textBox.transform.position;
+
+        character1.transform.position = new Vector3(character1Position.x - 7f, character1Position.y, character1Position.z);
+        character2.transform.position = new Vector3(character2Position.x + 7f, character2Position.y, character2Position.z);
+        textBox.transform.position = new Vector3(textBoxPosition.x, textBoxPosition.y - 4.5f, textBoxPosition.z);
+
+        character1EndPosition = character1.transform.position;
+        character2EndPosition = character2.transform.position;
+        textBoxEndPosition = textBox.transform.position;
+
+        StartCoroutine(MoveSpritesBeginning());
     }
 
     IEnumerator TypeLine()
@@ -150,5 +180,34 @@ public class BigDialogue : MonoBehaviour
             }
             character.isActiveSpeaker = false;
         }
+    }
+
+    IEnumerator MoveSpritesBeginning()
+    {
+        float time = 0;
+        while (time < moveDuration)
+        {
+            time += Time.deltaTime;
+            character1.gameObject.transform.position = Vector3.Lerp(character1.gameObject.transform.position, character1Position, time / moveDuration);
+            character2.gameObject.transform.position = Vector3.Lerp(character2.gameObject.transform.position, character2Position, time / moveDuration);
+            textBox.transform.position = Vector3.Lerp(textBox.transform.position, textBoxPosition, time / moveDuration);
+            yield return null;
+        }
+        StartDialogue();
+    }
+
+    IEnumerator MoveSpritesEnd()
+    {
+        float time = 0;
+        while (time < moveDuration)
+        {
+            time += Time.deltaTime;
+            character1.gameObject.transform.position = Vector3.Lerp(character1.gameObject.transform.position, character1EndPosition, time / moveDuration);
+            character2.gameObject.transform.position = Vector3.Lerp(character2.gameObject.transform.position, character2EndPosition, time / moveDuration);
+            textBox.transform.position = Vector3.Lerp(textBox.transform.position, textBoxEndPosition, time / moveDuration);
+            yield return null;
+        }
+        player.state = player.initialState;
+        Destroy(gameObject);
     }
 }
