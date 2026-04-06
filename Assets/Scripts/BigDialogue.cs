@@ -36,6 +36,7 @@ public class BigDialogue : MonoBehaviour
     private Vector3 character2EndPosition;
     private Vector3 textBoxEndPosition;
 
+    public AudioClip audioClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -143,9 +144,17 @@ public class BigDialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        int i = 0;
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
+            i++;
+            if (i == 5)
+            {
+                SoundManager.instance.PlaySound(audioClip);
+                i = 0;
+            }
+
             yield return new WaitForSeconds(textSpeed);
         }
     }
