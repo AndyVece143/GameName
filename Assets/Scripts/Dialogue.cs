@@ -18,6 +18,8 @@ public class Dialogue : MonoBehaviour
     private Vector3 textBoxEndPosition;
     public float duration;
     public AudioClip audioClip;
+    private const string HTML_ALPHA = "<color=#00000000>";
+    public bool ready = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,7 +36,7 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
-            if (textComponent.text == lines[index])
+            if (ready == true)
             {
                 NextLine();
             }
@@ -42,6 +44,7 @@ public class Dialogue : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+                ready = true;
             }
         }
     }
@@ -54,6 +57,8 @@ public class Dialogue : MonoBehaviour
 
     void NextLine()
     {
+        ready = false;
+
         if (index < lines.Length - 1)
         {
             index++;
@@ -82,19 +87,41 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        //int i = 0;
+        //foreach (char c in lines[index].ToCharArray())
+        //{
+        //    textComponent.text += c;
+        //    i++;
+        //    if (i == 5)
+        //    {
+        //        SoundManager.instance.PlaySound(audioClip);
+        //        i = 0;
+        //    }
+
+        //    yield return new WaitForSeconds(textSpeed);
+        //}
         int i = 0;
+        string originalText = lines[index];
+        string displayedText = "";
+        int alphaIndex = 0;
+
         foreach (char c in lines[index].ToCharArray())
         {
-            textComponent.text += c;
+            alphaIndex++;
+            textComponent.text = originalText;
+            displayedText = textComponent.text.Insert(alphaIndex, HTML_ALPHA);
+            textComponent.text = displayedText;
+
             i++;
             if (i == 5)
             {
                 SoundManager.instance.PlaySound(audioClip);
                 i = 0;
             }
- 
+
             yield return new WaitForSeconds(textSpeed);
         }
+        ready = true;
     }
 
     IEnumerator MoveSpriteBeginning()

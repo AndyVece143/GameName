@@ -148,9 +148,17 @@ public class Player : MonoBehaviour
         thoughtBubble.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Interact")
+    //    {
+    //        thoughtBubble.enabled = true;
+    //    }
+    //}
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Interact")
+        if (collision.gameObject.tag == "Interact" && state != State.NoMove)
         {
             thoughtBubble.enabled = true;
         }
