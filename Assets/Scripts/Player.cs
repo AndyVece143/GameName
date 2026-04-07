@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public Animator anim;
 
     public SpriteRenderer thoughtBubble;
+    public SpriteRenderer goBubble;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         thoughtBubble.enabled = false;
+        goBubble.enabled = false;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -66,14 +68,14 @@ public class Player : MonoBehaviour
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
-            Jump();
+            JumpForceMethod();
         }
 
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
         {
             if (jumpTimeCounter > 0)
             {
-                Jump();
+                JumpForceMethod();
                 jumpTimeCounter -= Time.deltaTime;
             }
             else
@@ -108,7 +110,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Jump()
+    private void JumpForceMethod()
     {
         body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce);
     }
@@ -162,6 +164,11 @@ public class Player : MonoBehaviour
         {
             thoughtBubble.enabled = true;
         }
+
+        if (collision.gameObject.tag == "Door")
+        {
+            goBubble.enabled = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -169,6 +176,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Interact")
         {
             thoughtBubble.enabled = false;
+        }
+
+        if (collision.gameObject.tag == "Door")
+        {
+            goBubble.enabled = false;
         }
     }
 }
