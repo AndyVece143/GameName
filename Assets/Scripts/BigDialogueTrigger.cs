@@ -1,5 +1,8 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UIElements.Image;
 
 public class BigDialogueTrigger : MonoBehaviour
 {
@@ -11,6 +14,10 @@ public class BigDialogueTrigger : MonoBehaviour
     public bool[] changes;
     public bool talker;
     public int react;
+    public int[] emotionChanges;
+
+    public BigDialogueSprite char1;
+    public BigDialogueSprite char2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,6 +39,19 @@ public class BigDialogueTrigger : MonoBehaviour
         BigDialogue newBigDialogue = Instantiate(bigDialogue);
         newBigDialogue.lines = lines;
         newBigDialogue.talkChanges = changes;
+        newBigDialogue.emotionChanges = emotionChanges;
+
+
+        newBigDialogue.character1.anim = newBigDialogue.character1.GetComponent<Animator>();
+        newBigDialogue.character1.anim.runtimeAnimatorController = char1.anim.runtimeAnimatorController;
+        newBigDialogue.character1.image = char1.image;
+
+
+        newBigDialogue.character2.anim = newBigDialogue.character2.GetComponent<Animator>();
+        newBigDialogue.character2.anim.runtimeAnimatorController = char2.anim.runtimeAnimatorController;
+        newBigDialogue.character2.image = char2.image;
+
+        //newBigDialogue.character2.transform.localScale = new Vector3(1, 0, 0);
         if (talker)
         {
             newBigDialogue.character1.isActiveSpeaker = true;

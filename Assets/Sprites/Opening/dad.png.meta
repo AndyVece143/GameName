@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: daf5cc43531c36943a403d7edd73ea66
+guid: defb2376a8019a14aa3f496a8d6c3b9f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5350135763212627994
-    second: livingroom_0
+      213: 2335413334521252836
+    second: dad_0
+  - first:
+      213: 4597528965668681005
+    second: dad_1
+  - first:
+      213: -7600243004971875902
+    second: dad_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: livingroom_0
+      name: dad_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 52
-        width: 633
-        height: 153
+        x: 1
+        y: 1
+        width: 46
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a10f66261208f3a40800000000000000
-      internalID: 5350135763212627994
+      spriteID: 4eb89dfdd0e096020800000000000000
+      internalID: 2335413334521252836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dad_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d25304b4c34bdcf30800000000000000
+      internalID: 4597528965668681005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dad_2
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1010a3143868690800000000000000
+      internalID: -7600243004971875902
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1f079513615ae2e4d846426e12e70b5f
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +196,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":46.0,"y":63.0},"gridSpriteOffset":{"x":1.0,"y":1.0},"gridSpritePadding":{"x":1.0,"y":1.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      livingroom_0: 5350135763212627994
+      dad_0: 2335413334521252836
+      dad_1: 4597528965668681005
+      dad_2: -7600243004971875902
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using Unity.VectorGraphics;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -11,6 +12,8 @@ public class BigDialogue : MonoBehaviour
     public float textSpeed;
     private int index;
     public bool[] talkChanges;
+
+    public int[] emotionChanges;
 
     public Player player;
     public Canvas canvas;
@@ -37,6 +40,9 @@ public class BigDialogue : MonoBehaviour
     private Vector3 textBoxEndPosition;
 
     public AudioClip audioClip;
+
+    private const string HTML_ALPHA = "<color=#00000000>";
+    public bool ready = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -54,7 +60,7 @@ public class BigDialogue : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
-            if (textComponent.text == lines[index])
+            if (ready == true)
             {
                 //ChangeBothSprites();
                 NextLine();
@@ -75,13 +81,16 @@ public class BigDialogue : MonoBehaviour
 
     void NextLine()
     {
+        ready = false;
         if (index < lines.Length - 1)
         {
             index++;
+
             if (talkChanges[index] == true)
             {
                 ChangeBothSprites();
             }
+            ChangeEmotion();
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
@@ -105,8 +114,10 @@ public class BigDialogue : MonoBehaviour
 
         if (!character2.isActiveSpeaker)
         {
+            Debug.Log("Geyt ");
             StartCoroutine(ChangeSprite(false, character2));
         }
+        ChangeEmotion();
     }
 
     //Swaps the active speaker
@@ -122,6 +133,20 @@ public class BigDialogue : MonoBehaviour
         {
             StartCoroutine(ChangeSprite(true, character1));
             StartCoroutine(ChangeSprite(false, character2));
+        }
+
+    }
+
+    void ChangeEmotion()
+    {
+        if (character1.isActiveSpeaker)
+        {
+            character1.ChangeEmotion(emotionChanges[index]);
+        }
+
+        if (character2.isActiveSpeaker)
+        {
+            character2.ChangeEmotion(emotionChanges[index]);
         }
     }
 
@@ -144,10 +169,31 @@ public class BigDialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        //int i = 0;
+        //foreach (char c in lines[index].ToCharArray())
+        //{
+        //    textComponent.text += c;
+        //    i++;
+        //    if (i == 5)
+        //    {
+        //        SoundManager.instance.PlaySound(audioClip);
+        //        i = 0;
+        //    }
+
+        //    yield return new WaitForSeconds(textSpeed);
+        //}
         int i = 0;
+        string originalText = lines[index];
+        string displayedText = "";
+        int alphaIndex = 0;
+
         foreach (char c in lines[index].ToCharArray())
         {
-            textComponent.text += c;
+            alphaIndex++;
+            textComponent.text = originalText;
+            displayedText = textComponent.text.Insert(alphaIndex, HTML_ALPHA);
+            textComponent.text = displayedText;
+
             i++;
             if (i == 5)
             {
@@ -157,6 +203,7 @@ public class BigDialogue : MonoBehaviour
 
             yield return new WaitForSeconds(textSpeed);
         }
+        ready = true;
     }
 
     IEnumerator ChangeSprite(bool activeSpeaker, BigDialogueSprite character)
@@ -166,7 +213,15 @@ public class BigDialogue : MonoBehaviour
         //Become brighter and bigger
         if (activeSpeaker)
         {
-            Vector3 targetSize = character.gameObject.transform.localScale + new Vector3(0.05f, 0.05f, 0.05f);
+            character.isActiveSpeaker = true;
+            Vector3 targetSize = character.gameObject.transform.localScale + new Vector3(0.1f, 0.1f, 0.1f);
+
+            if (character.transform.localScale.x < 0)
+            {
+                targetSize = character.gameObject.transform.localScale + new Vector3(-0.1f, 0.1f, 0.1f);
+            }
+
+            //Vector3 targetSize = character.gameObject.transform.localScale + new Vector3(0.1f, 0.1f, 0.1f);
             while (time < duration)
             {
                 time += Time.deltaTime;
@@ -174,20 +229,27 @@ public class BigDialogue : MonoBehaviour
                 character.gameObject.transform.localScale = Vector3.Lerp(character.gameObject.transform.localScale, targetSize, time / duration);
                 yield return null;
             }
-            character.isActiveSpeaker = true;
+
         }
 
         else
         {
-            Vector3 targetSize = character.gameObject.transform.localScale - new Vector3(0.05f, 0.05f, 0.05f);
+            character.isActiveSpeaker = false;
+            Vector3 targetSize = character.gameObject.transform.localScale - new Vector3(0.1f, 0.1f, 0.1f);
+            if (character.transform.localScale.x < 0)
+            {
+                targetSize = character.gameObject.transform.localScale - new Vector3(-0.1f, 0.1f, 0.1f);
+            }
+
             while (time < duration)
             {
                 time += Time.deltaTime;
                 character.image.color = Color.Lerp(baseColor, darkColor, time / duration);
                 character.gameObject.transform.localScale = Vector3.Lerp(character.gameObject.transform.localScale, targetSize, time / duration);
+                Debug.Log(character.image.color);
                 yield return null;
             }
-            character.isActiveSpeaker = false;
+
         }
     }
 

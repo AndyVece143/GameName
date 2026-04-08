@@ -5,15 +5,15 @@ public class BigDialogueSprite : MonoBehaviour
 {
     public bool isActiveSpeaker;
     public Image image;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Animator anim;
+
     void Start()
     {
-        
+        image = GetComponent<Image>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeEmotion(int i)
     {
-        
+        anim.SetInteger("emotion", i);
     }
 }
