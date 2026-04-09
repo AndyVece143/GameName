@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Interact
   - Door
+  - Weakpoint
+  - Enemy
   layers:
   - Default
   - TransparentFX

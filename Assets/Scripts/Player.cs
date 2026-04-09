@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
         Standard,
         NoMove,
         RealWorld,
+        HitStun,
     }
     public State state;
     public State initialState;
@@ -25,6 +26,8 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer thoughtBubble;
     public SpriteRenderer goBubble;
+    private bool bounce = false;
+    private float hitStunTime;
 
     private void Awake()
     {
@@ -54,12 +57,16 @@ public class Player : MonoBehaviour
             case State.RealWorld:
                 RealWorldMovement();
                 break;
+            case State.HitStun:
+                HitStun();
+                break;
         }
     }
 
     private void Movement()
     {
         anim.SetInteger("react", 0);
+        hitStunTime = 0;
 
         float horizontalInput = Input.GetAxis("Horizontal");
 
@@ -98,6 +105,7 @@ public class Player : MonoBehaviour
         if (!IsGrounded() && body.linearVelocity.y <= 0)
         {
             body.gravityScale = 2;
+            bounce = false;
         }
 
         //Flip Sprite
@@ -118,11 +126,41 @@ public class Player : MonoBehaviour
         anim.SetBool("stilldown", IsStillCrouching());
         anim.SetBool("up", IsLookingUp(true));
         anim.SetBool("stillup", IsLookingUp(false));
+        anim.SetBool("bounce", bounce);
+    }
+
+    private void HitStun()
+    {
+        hitStunTime += Time.deltaTime;
+        anim.SetBool("hitstun", true);
+        if (IsGrounded() && hitStunTime >= 0.2f)
+        {
+            anim.SetBool("hitstun", false);
+            state = State.Standard;
+        }
+    }
+
+    private void KnockBack()
+    {
+        if (IsFacingRight())
+        {
+            body.linearVelocity = new Vector2(-3f, 5f);
+        }
+        else
+        {
+            body.linearVelocity = new Vector2(3f, 5f);
+        }
     }
 
     private void JumpForceMethod()
     {
         body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce);
+    }
+
+    public void Bounce()
+    {
+        body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce * 1.5f);
+        bounce = true;
     }
 
     public bool IsFalling()
@@ -215,6 +253,18 @@ public class Player : MonoBehaviour
         return raycastHit.collider != null;
     }
 
+    private bool IsFacingRight()
+    {
+        if (transform.localScale.x == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void StopMoving(int react)
     {
         body.linearVelocity = new Vector2(0, 0);
@@ -253,6 +303,15 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Door")
         {
             goBubble.enabled = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy")
+        {
+            KnockBack();
+            state = State.HitStun;
         }
     }
 }
