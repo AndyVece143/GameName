@@ -59,6 +59,8 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
+        anim.SetInteger("react", 0);
+
         float horizontalInput = Input.GetAxis("Horizontal");
 
         body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
@@ -108,11 +110,81 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
+
+        anim.SetBool("move", horizontalInput != 0);
+        anim.SetBool("grounded", IsGrounded());
+        anim.SetBool("falling", IsFalling());
+        anim.SetBool("down", IsCrouching());
+        anim.SetBool("stilldown", IsStillCrouching());
+        anim.SetBool("up", IsLookingUp(true));
+        anim.SetBool("stillup", IsLookingUp(false));
     }
 
     private void JumpForceMethod()
     {
         body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce);
+    }
+
+    public bool IsFalling()
+    {
+        if (body.linearVelocity.y < 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool IsCrouching()
+    {
+        if (IsGrounded() && body.linearVelocity.x == 0 && Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool IsStillCrouching()
+    {
+        if (IsGrounded() && body.linearVelocity.x == 0 && Input.GetKey(KeyCode.DownArrow))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool IsLookingUp(bool b)
+    {
+        switch (b)
+        {
+            case true:
+                if (IsGrounded() && body.linearVelocity.x == 0 && Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            case false:
+                if (IsGrounded() && body.linearVelocity.x == 0 && Input.GetKey(KeyCode.UpArrow))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
     }
 
     private void RealWorldMovement()

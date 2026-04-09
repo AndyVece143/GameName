@@ -41,6 +41,8 @@ public class BigDialogue : MonoBehaviour
 
     public AudioClip audioClip;
 
+    public CameraController mainCamera;
+
     private const string HTML_ALPHA = "<color=#00000000>";
     public bool ready = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -49,6 +51,7 @@ public class BigDialogue : MonoBehaviour
         canvas = GetComponent<Canvas>();
         canvas.worldCamera = Camera.main;
         player = Player.FindAnyObjectByType<Player>();
+        mainCamera = CameraController.FindAnyObjectByType<CameraController>();
         textComponent.text = string.Empty;
         BeginningSprite();
         SetPositions();
@@ -105,7 +108,6 @@ public class BigDialogue : MonoBehaviour
     //If a character is not set to talk in the beginning, they get resized
     void BeginningSprite()
     {
-        Debug.Log("Beginning Sprite");
         if (!character1.isActiveSpeaker)
         {
             StartCoroutine(ChangeSprite(false, character1));
@@ -114,7 +116,6 @@ public class BigDialogue : MonoBehaviour
 
         if (!character2.isActiveSpeaker)
         {
-            Debug.Log("Geyt ");
             StartCoroutine(ChangeSprite(false, character2));
         }
         ChangeEmotion();
@@ -182,7 +183,7 @@ public class BigDialogue : MonoBehaviour
 
         //    yield return new WaitForSeconds(textSpeed);
         //}
-        int i = 0;
+        int i = 4;
         string originalText = lines[index];
         string displayedText = "";
         int alphaIndex = 0;
@@ -246,7 +247,6 @@ public class BigDialogue : MonoBehaviour
                 time += Time.deltaTime;
                 character.image.color = Color.Lerp(baseColor, darkColor, time / duration);
                 character.gameObject.transform.localScale = Vector3.Lerp(character.gameObject.transform.localScale, targetSize, time / duration);
-                Debug.Log(character.image.color);
                 yield return null;
             }
 
@@ -279,6 +279,7 @@ public class BigDialogue : MonoBehaviour
             yield return null;
         }
         player.state = player.initialState;
+        mainCamera.state = mainCamera.initialState;
         Destroy(gameObject);
     }
 }

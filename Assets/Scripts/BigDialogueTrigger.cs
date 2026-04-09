@@ -19,11 +19,14 @@ public class BigDialogueTrigger : MonoBehaviour
     public BigDialogueSprite char1;
     public BigDialogueSprite char2;
 
+    public CameraController mainCamera;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = Player.FindAnyObjectByType<Player>();
         boxCollider = GetComponent<BoxCollider2D>();
+        mainCamera = CameraController.FindAnyObjectByType<CameraController>();
         triggered = false;
     }
 
@@ -33,6 +36,7 @@ public class BigDialogueTrigger : MonoBehaviour
         {
             return;
         }
+        mainCamera.state = CameraController.State.StayStill;
         
         player.StopMoving(react);
         player.state = Player.State.NoMove;

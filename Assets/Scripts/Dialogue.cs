@@ -100,7 +100,7 @@ public class Dialogue : MonoBehaviour
 
         //    yield return new WaitForSeconds(textSpeed);
         //}
-        int i = 0;
+        int i = 4;
         string originalText = lines[index];
         string displayedText = "";
         int alphaIndex = 0;

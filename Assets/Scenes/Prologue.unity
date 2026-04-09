@@ -466,6 +466,7 @@ MonoBehaviour:
   emotionChanges: 010000000100000002000000030000000200000003000000
   char1: {fileID: 8784599758288289809, guid: 0e8c84317920670499d92d1da5383758, type: 3}
   char2: {fileID: 357313892532197023, guid: 52d9fdecabfa68a49af2a68c5d83d073, type: 3}
+  mainCamera: {fileID: 0}
 --- !u!61 &70513226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -821,6 +822,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &343566432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4553360927662722350, guid: af02845a379dbbd49a2f47d97b170dc8, type: 3}
+  m_PrefabInstance: {fileID: 7547040742360225274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &381059483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1044,6 +1050,21 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6402798565173619415, guid: af02845a379dbbd49a2f47d97b170dc8, type: 3}
   m_PrefabInstance: {fileID: 7547040742360225274}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343566432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154506be7d4351a4b940962295a97cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  player: {fileID: 0}
+  state: 1
+  initialState: 1
 --- !u!1 &563285092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,7 +4088,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4553360927662722350, guid: af02845a379dbbd49a2f47d97b170dc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 519420037}
   m_SourcePrefab: {fileID: 100100000, guid: af02845a379dbbd49a2f47d97b170dc8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
