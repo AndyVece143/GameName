@@ -20,6 +20,9 @@ public class Dialogue : MonoBehaviour
     public AudioClip audioClip;
     private const string HTML_ALPHA = "<color=#00000000>";
     public bool ready = false;
+    public bool sceneTransition;
+    public LevelLoader loader;
+    public string sceneName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +30,7 @@ public class Dialogue : MonoBehaviour
         canvas = GetComponent<Canvas>();
         canvas.worldCamera = Camera.main;
         player = Player.FindAnyObjectByType<Player>();
+        loader = LevelLoader.FindAnyObjectByType<LevelLoader>();
         textComponent.text = string.Empty;
         SetPosition();
     }
@@ -40,12 +44,12 @@ public class Dialogue : MonoBehaviour
             {
                 NextLine();
             }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-                ready = true;
-            }
+            //else
+            //{
+            //    StopAllCoroutines();
+            //    textComponent.text = lines[index];
+            //    ready = true;
+            //}
         }
     }
 
@@ -67,10 +71,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            if (interactableObject != null)
-            {
-                interactableObject.interactable = true;
-            }
+
             StartCoroutine(MoveSpriteEnd());
             //player.state = player.initialState;
             //Destroy(gameObject);
@@ -146,7 +147,18 @@ public class Dialogue : MonoBehaviour
             textBox.transform.position = Vector3.Lerp(textBox.transform.position, textBoxEndPosition, time / duration);
             yield return null;
         }
-        player.state = player.initialState;
-        Destroy(gameObject);
+        if (sceneTransition)
+        {
+            loader.LoadNextLevel(sceneName);
+        }
+        else
+        {
+            if (interactableObject != null)
+            {
+                interactableObject.interactable = true;
+            }
+            player.state = player.initialState;
+            Destroy(gameObject);
+        }
     }
 }

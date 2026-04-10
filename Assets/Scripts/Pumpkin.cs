@@ -21,6 +21,8 @@ public class Pumpkin : MonoBehaviour
 
     public Stars stars;
 
+    public int damage;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

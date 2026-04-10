@@ -11,13 +11,15 @@ public class Player : MonoBehaviour
     public float jumpTime;
     public float jumpTimeCounter;
     private bool isJumping;
-
+    public int health;
+    public int defense;
     public enum State
     {
         Standard,
         NoMove,
         RealWorld,
         HitStun,
+        Death,
     }
     public State state;
     public State initialState;
@@ -28,14 +30,20 @@ public class Player : MonoBehaviour
     public SpriteRenderer goBubble;
     private bool bounce = false;
     private float hitStunTime;
+    public EnemyStomp enemyStomp;
+    public CameraController mainCamera;
+    public GameManager gameManager;
+    private float deathTime;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        gameManager = GameManager.FindAnyObjectByType<GameManager>();
         thoughtBubble.enabled = false;
         goBubble.enabled = false;
+        mainCamera = CameraController.FindAnyObjectByType<CameraController>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,13 +68,20 @@ public class Player : MonoBehaviour
             case State.HitStun:
                 HitStun();
                 break;
+            case State.Death:
+                DeathMovement();
+                break;
         }
     }
 
     private void Movement()
     {
         anim.SetInteger("react", 0);
+        anim.SetBool("death", false);
+        boxCollider.enabled = true;
+        enemyStomp.enabled = true;
         hitStunTime = 0;
+        deathTime = 0;
 
         float horizontalInput = Input.GetAxis("Horizontal");
 
@@ -129,6 +144,27 @@ public class Player : MonoBehaviour
         anim.SetBool("bounce", bounce);
     }
 
+    private void TakeDamage(int damage)
+    {
+        health -= (damage - defense);
+
+        if (health < 0)
+        {
+            health = 0;
+        }
+
+        if (health > 0)
+        {
+            state = State.HitStun;
+            KnockBack();
+        }
+        else
+        {
+            state = State.Death;
+            Death();
+        }
+    }
+
     private void HitStun()
     {
         hitStunTime += Time.deltaTime;
@@ -149,6 +185,25 @@ public class Player : MonoBehaviour
         else
         {
             body.linearVelocity = new Vector2(3f, 5f);
+        }
+    }
+
+    private void Death()
+    {
+        mainCamera.state = CameraController.State.StayStill;
+        boxCollider.enabled = false;
+        body.linearVelocity = new Vector2(0, 10);
+        enemyStomp.enabled = false;
+    }
+
+    private void DeathMovement()
+    {
+        deathTime += Time.deltaTime;
+        anim.SetBool("death", true);
+        if (deathTime >= 2.5f)
+        {
+            StartCoroutine(gameManager.RespawnPlayerWaiter());
+            state = State.NoMove;
         }
     }
 
@@ -310,8 +365,9 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.tag == "Enemy")
         {
-            KnockBack();
-            state = State.HitStun;
+            //KnockBack();
+            //state = State.HitStun;
+            TakeDamage(collision.gameObject.GetComponent<Pumpkin>().damage);
         }
     }
 }

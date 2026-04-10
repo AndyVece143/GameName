@@ -231,11 +231,14 @@ MonoBehaviour:
     m_Bits: 8
   jumpTime: 0.3
   jumpTimeCounter: 0
+  health: 10
+  defense: 0
   state: 0
   initialState: 0
   anim: {fileID: 0}
   thoughtBubble: {fileID: 3144792768126663266}
   goBubble: {fileID: 4902886741641266360}
+  enemyStomp: {fileID: 6998239947404957871}
 --- !u!50 &4873581914531252973
 Rigidbody2D:
   serializedVersion: 5

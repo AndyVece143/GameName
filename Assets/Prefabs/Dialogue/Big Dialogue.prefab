@@ -352,6 +352,8 @@ MonoBehaviour:
   moveDuration: 1
   textBox: {fileID: 3818227815034316614}
   audioClip: {fileID: 8300000, guid: 0a866143188d4f7419306ecbcb3187d2, type: 3}
+  mainCamera: {fileID: 0}
+  ready: 0
 --- !u!1 &2099867311418912030
 GameObject:
   m_ObjectHideFlags: 0

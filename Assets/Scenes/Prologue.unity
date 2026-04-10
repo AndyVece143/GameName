@@ -454,16 +454,35 @@ MonoBehaviour:
   player: {fileID: 0}
   triggered: 0
   lines:
-  - Hey Dad! Conversations are now complete! We can finally talk to each other!
-  - 'Emotions are also implemented! Now I can finally yell at you! '
-  - Aw man, this sucks.
-  - I'm gonna drink a beer. Wanna join me?
-  - I'm not old enough yet.
-  - More for me then. Don't mind if I dooooooo.
-  changes: 000101010101
+  - (Oh boy, it's Dad, and it looks like he's drinking again.)
+  - (He's gonna wanna talk. Maybe I can finally get through to him. Time to put on
+    a happy face.)
+  - H-Hey Dad! I'm back from school! It's good to be home!
+  - ...I see.
+  - So... how was your day?
+  - It was good... until you came into the house and made a big ruckus.
+  - Excuse me? I entered the house quietly like I always-
+  - Are you talking back to me?!
+  - No, I'm not. I'm just try-
+  - Be quiet! Just be quiet!
+  - I swear, ever since your mom passed away, you've been more irritating.
+  - I can't go one day without you saying or doing something to piss me off.
+  - Actually, Dad, that's what I wanted to talk to you about.
+  - I think your drinking is causing a lot of-
+  - You don't know anything!
+  - Eep!
+  - I'm the parent in this house! I'm right, and you're wrong! I don't need fixing!
+  - I-I just th-think that-
+  - Think what?! Say it!
+  - Th-that you sh-should.
+  - .................................................................
+  - Yeah, that's what I thought. You can't even say it.
+  - Now get out of my sight. You've provoked me enough for the day.
+  - Y-yes...
+  changes: 000000010101010101010000010001010101010100010001
   talker: 1
   react: 1
-  emotionChanges: 010000000100000002000000030000000200000003000000
+  emotionChanges: 000000000000000001000000000000000200000000000000030000000200000002000000010000000200000002000000000000000000000001000000040000000100000002000000010000000200000002000000020000000300000002000000
   char1: {fileID: 8784599758288289809, guid: 0e8c84317920670499d92d1da5383758, type: 3}
   char2: {fileID: 357313892532197023, guid: 52d9fdecabfa68a49af2a68c5d83d073, type: 3}
   mainCamera: {fileID: 0}
@@ -723,6 +742,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -884,6 +907,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -951,6 +978,10 @@ PrefabInstance:
     - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
@@ -1026,6 +1057,10 @@ PrefabInstance:
     - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
@@ -2214,6 +2249,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2288,6 +2327,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2340,15 +2383,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e35eccfd7d9f8c47ac0d80547e78f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
+  isDialogue: 0
   player: {fileID: 0}
   dialogueLines:
   - No I'm not the one drinking. The dad just hasn't been made yet.
   - Check back in a couple days.
   - Sincerely, brawl jerma
   dialogue: {fileID: 4880091693724806556, guid: 62d50072b0d625941a6595fb63798fc9, type: 3}
+  paperLine: 
+  paper: {fileID: 0}
   interactable: 0
   boxCollider: {fileID: 0}
   react: 1
+  mainCamera: {fileID: 0}
+  sceneTransition: 0
+  sceneName: 
 --- !u!61 &1377028672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2526,6 +2575,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2601,6 +2654,10 @@ PrefabInstance:
     - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
@@ -2794,6 +2851,10 @@ PrefabInstance:
     - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
@@ -3340,6 +3401,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1979898171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1179174765805538187, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_Name
+      value: Interactable Object (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 44.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: react
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: sceneName
+      value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: sceneTransition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: I don't really feel like doing anything else... He's just too much...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: I'm gonna go to sleep.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 442473880b3fb86478972619de29c8aa, type: 3}
 --- !u!1 &2044642279
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,6 +3632,10 @@ PrefabInstance:
     - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
@@ -3714,6 +3864,10 @@ PrefabInstance:
     - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
+      propertyPath: isDialogue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: dialogueLines.Array.size
@@ -3972,7 +4126,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7803536439436533219, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
@@ -3990,11 +4145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8335984249971413454, guid: fc926a3c526be0b428c8d95fe47720d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.78
+      value: -7.84
       objectReference: {fileID: 0}
     - target: {fileID: 8335984249971413454, guid: fc926a3c526be0b428c8d95fe47720d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.684
+      value: -1.653
       objectReference: {fileID: 0}
     - target: {fileID: 8335984249971413454, guid: fc926a3c526be0b428c8d95fe47720d3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4033,6 +4188,107 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc926a3c526be0b428c8d95fe47720d3, type: 3}
+--- !u!1001 &6466901467448301052
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478169277636961265, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008984675949537260, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_Name
+      value: Level Loader
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979063229827300871, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f62353f45695c9343b928e90dbd2aa9f, type: 3}
 --- !u!1001 &7547040742360225274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4134,3 +4390,5 @@ SceneRoots:
   - {fileID: 1393494216}
   - {fileID: 1238964756}
   - {fileID: 1394751566}
+  - {fileID: 6466901467448301052}
+  - {fileID: 1979898171}

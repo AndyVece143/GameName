@@ -246,6 +246,7 @@ MonoBehaviour:
   playerCollision: {fileID: 3613715110477180917}
   weakpoint: {fileID: 2884794587389542067}
   stars: {fileID: 4350444048787575334, guid: c7e046cace3c85c48b1f50baf47185c9, type: 3}
+  damage: 3
 --- !u!1 &4326435720572901492
 GameObject:
   m_ObjectHideFlags: 0

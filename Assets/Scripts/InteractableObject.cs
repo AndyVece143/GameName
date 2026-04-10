@@ -15,6 +15,8 @@ public class InteractableObject : MonoBehaviour
     public BoxCollider2D boxCollider;
     public int react;
     public CameraController mainCamera;
+    public bool sceneTransition;
+    public string sceneName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,6 +49,11 @@ public class InteractableObject : MonoBehaviour
                             Dialogue newDialogue = Instantiate(dialogue);
                             newDialogue.lines = dialogueLines;
                             newDialogue.interactableObject = this;
+                            if (sceneTransition == true)
+                            {
+                                newDialogue.sceneTransition = sceneTransition;
+                                newDialogue.sceneName = sceneName;
+                            }
                             break;
 
                         case false:
