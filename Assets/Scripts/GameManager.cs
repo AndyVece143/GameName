@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public CameraController mainCamera;
     public DoorTransition doorTransition;
     public Checkpoint activeCheckpoint;
+    private float starTimer;
+    public float starTimerMax;
+    public FallingStar fallingStar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +23,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "Health: " + player.health;
+        healthText.text = "" + player.health;
+        StarSpawner();
     }
 
     public void RespawnPlayer()
@@ -37,6 +41,19 @@ public class GameManager : MonoBehaviour
         player.state = Player.State.Standard;
         player.health = 10;
         mainCamera.state = CameraController.State.FollowPlayer;
+    }
+
+    private void StarSpawner()
+    {
+        starTimer += Time.deltaTime;
+
+        if (starTimer >= starTimerMax)
+        {
+            FallingStar newFallingStar = Instantiate(fallingStar);
+            float x = Random.Range(-10f, 10f);
+            newFallingStar.transform.position = new Vector3(x, player.transform.position.y + 6f, 0);
+            starTimer = 0;
+        }
     }
 
     public IEnumerator RespawnPlayerWaiter()

@@ -370,4 +370,14 @@ public class Player : MonoBehaviour
             TakeDamage(collision.gameObject.GetComponent<Pumpkin>().damage);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Danger" && state != State.Death)
+        {
+            health = 0;
+            state = State.Death;
+            Death();
+        }
+    }
 }

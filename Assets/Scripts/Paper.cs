@@ -25,6 +25,9 @@ public class Paper : MonoBehaviour
     private const string HTML_ALPHA = "<color=#00000000>";
     public bool ready = false;
     public CameraController mainCamera;
+    public GameObject textBox;
+    public float textBoxDuration;
+    private Vector3 textBoxPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,7 +47,7 @@ public class Paper : MonoBehaviour
         {
             if (ready == true)
             {
-                StartCoroutine(MovePaperEnd());
+                StartCoroutine(MoveTextBox());
             }
             else
             {
@@ -63,6 +66,7 @@ public class Paper : MonoBehaviour
         letter.image.color = new Color(letter.image.color.r, letter.image.color.g, letter.image.color.b, 0);
         letterEndPosition = letter.transform.position;
         emptyColor = letter.image.color;
+        textBoxPosition = textBox.transform.position;
         StartCoroutine(MovePaperBeginning());
     }
 
@@ -114,5 +118,28 @@ public class Paper : MonoBehaviour
         player.state = player.initialState;
         mainCamera.state = mainCamera.initialState;
         Destroy(gameObject);
+    }
+
+    IEnumerator MoveTextBox()
+    {
+        float time = 0;
+        
+        while (time < textBoxDuration)
+        {
+            time += Time.deltaTime;
+            textBox.transform.position = Vector3.Lerp(textBox.transform.position, letterPosition, time / duration);
+            yield return null;
+        }
+        time = 0;
+        yield return new WaitForSeconds(1);
+
+        while (time < textBoxDuration)
+        {
+            time += Time.deltaTime;
+            textBox.transform.position = Vector3.Lerp(textBox.transform.position, textBoxPosition, time / duration);
+            yield return null;
+        }
+
+        StartCoroutine(MovePaperEnd());
     }
 }
