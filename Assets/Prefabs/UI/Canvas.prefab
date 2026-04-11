@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   pauseMenuUI: {fileID: 417773183304343108}
-  regularUI: {fileID: 0}
+  regularUI: {fileID: 1681061952323358566}
 --- !u!1 &417773183304343108
 GameObject:
   m_ObjectHideFlags: 0

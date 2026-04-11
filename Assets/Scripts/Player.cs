@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     {
         //state = State.Standard;
         initialState = state;
+        defense = StaticData.playerDefense;
     }
 
     // Update is called once per frame
