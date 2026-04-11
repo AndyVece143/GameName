@@ -9,6 +9,7 @@ TagManager:
   - Weakpoint
   - Enemy
   - Danger
+  - GameUI
   layers:
   - Default
   - TransparentFX

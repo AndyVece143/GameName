@@ -146,7 +146,15 @@ public class Player : MonoBehaviour
 
     private void TakeDamage(int damage)
     {
-        health -= (damage - defense);
+        Debug.Log(damage);
+        int takenDamage = damage - defense;
+        Debug.Log(takenDamage);
+        if (takenDamage < 0)
+        {
+            takenDamage = 0;
+        }
+
+        health -= takenDamage;
 
         if (health < 0)
         {

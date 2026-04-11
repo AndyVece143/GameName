@@ -14,10 +14,15 @@ public class GameManager : MonoBehaviour
     public float starTimerMax;
     public FallingStar fallingStar;
 
+    public int coinAmount;
+    public float timer;
+    private bool isTimerOn = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         respawnPosition = player.transform.position;
+        coinAmount = 0;
     }
 
     // Update is called once per frame
@@ -25,13 +30,18 @@ public class GameManager : MonoBehaviour
     {
         healthText.text = "" + player.health;
         StarSpawner();
+        if (isTimerOn)
+        {
+            timer += Time.deltaTime;
+        }
     }
 
     public void RespawnPlayer()
     {
         if (activeCheckpoint)
         {
-            player.transform.position = activeCheckpoint.transform.position;
+            //player.transform.position = activeCheckpoint.transform.position;
+            player.transform.position = new Vector3(activeCheckpoint.transform.position.x, activeCheckpoint.transform.position.y + 4f, activeCheckpoint.transform.position.z);
         }
         else
         {
@@ -50,10 +60,20 @@ public class GameManager : MonoBehaviour
         if (starTimer >= starTimerMax)
         {
             FallingStar newFallingStar = Instantiate(fallingStar);
-            float x = Random.Range(-10f, 10f);
-            newFallingStar.transform.position = new Vector3(x, player.transform.position.y + 6f, 0);
+            float x = Random.Range(player.transform.position.x - 10f, player.transform.position.x + 10f);
+            newFallingStar.transform.position = new Vector3(x, player.transform.position.y + 10f, 0);
             starTimer = 0;
         }
+    }
+
+    public void GetCoin()
+    {
+        coinAmount++;
+    }
+
+    public void StopTimer()
+    {
+        isTimerOn = false;
     }
 
     public IEnumerator RespawnPlayerWaiter()

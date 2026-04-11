@@ -117,6 +117,7 @@ public class Paper : MonoBehaviour
         }
         player.state = player.initialState;
         mainCamera.state = mainCamera.initialState;
+        player.defense++;
         Destroy(gameObject);
     }
 

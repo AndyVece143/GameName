@@ -45,6 +45,8 @@ public class BigDialogue : MonoBehaviour
 
     private const string HTML_ALPHA = "<color=#00000000>";
     public bool ready = false;
+
+    private GameObject gameUI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,6 +55,8 @@ public class BigDialogue : MonoBehaviour
         player = Player.FindAnyObjectByType<Player>();
         mainCamera = CameraController.FindAnyObjectByType<CameraController>();
         textComponent.text = string.Empty;
+        gameUI = GameObject.FindWithTag("GameUI");
+        gameUI.gameObject.SetActive(false);
         BeginningSprite();
         SetPositions();
         //StartDialogue();
@@ -280,6 +284,7 @@ public class BigDialogue : MonoBehaviour
         }
         player.state = player.initialState;
         mainCamera.state = mainCamera.initialState;
+        gameUI.SetActive(true);
         Destroy(gameObject);
     }
 }
