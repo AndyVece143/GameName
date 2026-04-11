@@ -6,7 +6,16 @@ public class EnemyStomp : MonoBehaviour
     {
         if (collision.tag == "Weakpoint" && GetComponentInParent<Player>().state != Player.State.Death)
         {
-            collision.gameObject.GetComponentInParent<Pumpkin>().Death();
+            switch (collision.gameObject.transform.parent.tag) 
+            {
+                case "Enemy":
+                    collision.gameObject.GetComponentInParent<Pumpkin>().Death();
+                    break;
+                case "Scarecrow":
+                    collision.gameObject.GetComponentInParent<Scarecrow>().Death();
+                    break;
+            }
+
             GetComponentInParent<Player>().Bounce();
         }
     }

@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Danger
   - GameUI
+  - Bullet
+  - Scarecrow
   layers:
   - Default
   - TransparentFX

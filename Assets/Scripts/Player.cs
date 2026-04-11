@@ -378,6 +378,11 @@ public class Player : MonoBehaviour
             //state = State.HitStun;
             TakeDamage(collision.gameObject.GetComponent<Pumpkin>().damage);
         }
+
+        if (collision.collider.tag == "Bullet")
+        {
+            TakeDamage(collision.gameObject.GetComponent<Bullet>().damage);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
