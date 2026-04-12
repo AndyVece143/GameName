@@ -413,6 +413,11 @@ public class Player : MonoBehaviour
             {
                 TakeDamage(collision.gameObject.GetComponent<Bullet>().damage);
             }
+
+            if (collision.collider.tag == "Ghost")
+            {
+                TakeDamage(collision.gameObject.GetComponent<Ghost>().damage);
+            }
         }
 
     }

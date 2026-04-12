@@ -12,6 +12,7 @@ TagManager:
   - GameUI
   - Bullet
   - Scarecrow
+  - Ghost
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - GroundLayer
   - Water
   - UI
-  - 
+  - PlayerLayer
   - 
   - 
   - 

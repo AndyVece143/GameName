@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 1915202966150913531}
   - component: {fileID: 4873581914531252973}
   - component: {fileID: 3791813462025119213}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Dream
   m_TagString: Player
   m_Icon: {fileID: 0}
