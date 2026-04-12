@@ -34,6 +34,12 @@ public class Player : MonoBehaviour
     public CameraController mainCamera;
     public GameManager gameManager;
     private float deathTime;
+    private float iFrameTimer;
+    public bool iFrames;
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip spinSound;
 
     private void Awake()
     {
@@ -91,6 +97,7 @@ public class Player : MonoBehaviour
         //Jumping Code
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
+            SoundManager.instance.PlaySound(jumpSound);
             isJumping = true;
             jumpTimeCounter = jumpTime;
             JumpForceMethod();
@@ -124,6 +131,22 @@ public class Player : MonoBehaviour
             bounce = false;
         }
 
+        iFrameTimer -= Time.deltaTime;
+        if (iFrameTimer < 0)
+        {
+            iFrames = false;
+        }
+
+        if (iFrames)
+        {
+            GetComponent<SpriteRenderer>().color = Color.gray;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+
         //Flip Sprite
         if (horizontalInput > 0.01f)
         {
@@ -147,7 +170,7 @@ public class Player : MonoBehaviour
 
     private void TakeDamage(int damage)
     {
-        Debug.Log(damage);
+        SoundManager.instance.PlaySound(hurtSound);
         int takenDamage = damage - defense;
         Debug.Log(takenDamage);
         if (takenDamage < 0)
@@ -182,6 +205,8 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("hitstun", false);
             state = State.Standard;
+            iFrames = true;
+            iFrameTimer = 3;
         }
     }
 
@@ -199,6 +224,7 @@ public class Player : MonoBehaviour
 
     private void Death()
     {
+        SoundManager.instance.PlaySound(deathSound);
         mainCamera.state = CameraController.State.StayStill;
         boxCollider.enabled = false;
         body.linearVelocity = new Vector2(0, 10);
@@ -207,6 +233,7 @@ public class Player : MonoBehaviour
 
     private void DeathMovement()
     {
+        anim.SetBool("hitstun", false);
         deathTime += Time.deltaTime;
         anim.SetBool("death", true);
         if (deathTime >= 2.5f)
@@ -225,6 +252,7 @@ public class Player : MonoBehaviour
     {
         body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce * 1.5f);
         bounce = true;
+        SoundManager.instance.PlaySound(spinSound);
     }
 
     public bool IsFalling()
@@ -372,17 +400,21 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Enemy")
+        if (iFrames == false && state != State.HitStun)
         {
-            //KnockBack();
-            //state = State.HitStun;
-            TakeDamage(collision.gameObject.GetComponent<Pumpkin>().damage);
+            if (collision.collider.tag == "Enemy")
+            {
+                //KnockBack();
+                //state = State.HitStun;
+                TakeDamage(collision.gameObject.GetComponent<Pumpkin>().damage);
+            }
+
+            if (collision.collider.tag == "Bullet")
+            {
+                TakeDamage(collision.gameObject.GetComponent<Bullet>().damage);
+            }
         }
 
-        if (collision.collider.tag == "Bullet")
-        {
-            TakeDamage(collision.gameObject.GetComponent<Bullet>().damage);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

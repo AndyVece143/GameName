@@ -239,6 +239,13 @@ MonoBehaviour:
   thoughtBubble: {fileID: 3144792768126663266}
   goBubble: {fileID: 4902886741641266360}
   enemyStomp: {fileID: 6998239947404957871}
+  mainCamera: {fileID: 0}
+  gameManager: {fileID: 0}
+  iFrames: 0
+  jumpSound: {fileID: 8300000, guid: 623b0737f03aeeb489d9e72fa1131697, type: 3}
+  hurtSound: {fileID: 8300000, guid: b6d9cf4f62492274b94a8066145aa529, type: 3}
+  deathSound: {fileID: 8300000, guid: 6f729dcef3997a94fba1520f36010061, type: 3}
+  spinSound: {fileID: 8300000, guid: 7e8a03e569e0f77488adbb7cbfbf1c7d, type: 3}
 --- !u!50 &4873581914531252973
 Rigidbody2D:
   serializedVersion: 5

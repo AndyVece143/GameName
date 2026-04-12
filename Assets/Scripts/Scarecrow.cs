@@ -13,6 +13,7 @@ public class Scarecrow : MonoBehaviour
     public Transform bulletSpawn;
     public bool facingRight = true;
     public bool straightShot;
+    public AudioClip shootSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,7 +28,11 @@ public class Scarecrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        float distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
+        if (distance <= 10)
+        {
+            Movement();
+        }
     }
 
     private void Movement()
@@ -36,6 +41,7 @@ public class Scarecrow : MonoBehaviour
 
         if (shootTimer <= 0)
         {
+            SoundManager.instance.PlaySound(shootSound);
             switch (straightShot) 
             {
                 case true:

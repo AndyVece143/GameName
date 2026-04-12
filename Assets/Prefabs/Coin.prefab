@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242ec8640fc10804984c32eb17697fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
-  pickupSound: {fileID: 8300000, guid: 1c08ce802dcb5d246a6afacf4809cf8a, type: 3}
+  pickupSound: {fileID: 8300000, guid: ed35e2a6e9dc292439055bae4a5abd8a, type: 3}
 --- !u!61 &7269495075481968589
 BoxCollider2D:
   m_ObjectHideFlags: 0
