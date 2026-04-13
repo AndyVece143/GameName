@@ -13,7 +13,8 @@ public class Ghost : MonoBehaviour
     public float wallDistance;
     private BoxCollider2D boxCollider;
     public float sightDistance;
-    private bool facingRight = true;
+    public bool facingRight = true;
+    private bool initialFacingRight;
     private Vector2 forwards;
     public Player player;
     private bool turning = false;
@@ -23,6 +24,7 @@ public class Ghost : MonoBehaviour
     private Animator anim;
     public Stars stars;
     public int damage;
+    private Quaternion initialRotation;
 
     public enum State
     {
@@ -40,6 +42,12 @@ public class Ghost : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        initialFacingRight = facingRight;
+        initialRotation = transform.rotation;
+        if (!facingRight)
+        {
+            StartRotate();
+        }
         initialPosition = transform.position;
         initialState = state;
     }
@@ -55,6 +63,7 @@ public class Ghost : MonoBehaviour
                 Moving();
                 break;
             case State.Standing:
+                StandingStill();
                 break;
             case State.Pursuing:
                 Pursuing();
@@ -85,6 +94,20 @@ public class Ghost : MonoBehaviour
         anim.SetBool("pursuing", false);
     }
 
+    private void StandingStill()
+    {
+        if (facingRight)
+        {
+            forwards = Vector2.right;
+        }
+        else
+        {
+            forwards = Vector2.left;
+        }
+
+        anim.SetBool("pursuing", false);
+    }
+
     void Rotate()
     {
         transform.Rotate(0, 180, 0);
@@ -101,13 +124,19 @@ public class Ghost : MonoBehaviour
         }
     }
 
+    void StartRotate()
+    {
+        transform.Rotate(0, 180, 0);
+        wanderSpeed = -wanderSpeed;
+        pursueSpeed = -pursueSpeed;
+    }
+
     void Detection()
     {
         RaycastHit2D detection = Physics2D.Raycast(ledgeDetector.position, forwards, sightDistance, raycastLayers);
 
         if (detection.collider != null)
         {
-            Debug.Log("Sas");
             if (detection.collider.CompareTag("Player"))
             {
                 state = State.Pursuing;
@@ -149,7 +178,9 @@ public class Ghost : MonoBehaviour
             turning = true;
         }
 
-        if (distance > 11f || distance < -11f)
+        float realDistance = Vector3.Distance(player.transform.position, transform.position);
+
+        if (realDistance > 11f)
         {
             Debug.Log("Stop chasing");
             Respawn();
@@ -171,8 +202,21 @@ public class Ghost : MonoBehaviour
 
     public void Respawn()
     {
-        transform.position = initialPosition;
+        //transform.position = initialPosition;
+        //state = initialState;
+        //if (facingRight != initialFacingRight)
+        //{
+        //    Rotate();
+        //}
+
+        if (facingRight != initialFacingRight)
+        {
+            Rotate();
+        }
+
         state = initialState;
+        Instantiate(gameObject, initialPosition, initialRotation);
+        Destroy(gameObject);
     }
 
     public void Death()
@@ -180,6 +224,14 @@ public class Ghost : MonoBehaviour
         Stars newStars = Instantiate(stars);
         newStars.transform.position = gameObject.transform.position;
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Light")
+        {
+            Death();
+        }
     }
 
     IEnumerator waiterTurn()
