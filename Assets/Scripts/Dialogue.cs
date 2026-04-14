@@ -24,6 +24,9 @@ public class Dialogue : MonoBehaviour
     public LevelLoader loader;
     public string sceneName;
 
+    public bool gameUIRemover;
+    private GameObject gameUI;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +35,12 @@ public class Dialogue : MonoBehaviour
         player = Player.FindAnyObjectByType<Player>();
         loader = LevelLoader.FindAnyObjectByType<LevelLoader>();
         textComponent.text = string.Empty;
+
+        if (gameUIRemover)
+        {
+            gameUI = GameObject.FindWithTag("GameUI");
+            gameUI.SetActive(false);
+        }
         SetPosition();
     }
 
@@ -158,6 +167,7 @@ public class Dialogue : MonoBehaviour
                 interactableObject.interactable = true;
             }
             player.state = player.initialState;
+            gameUI.SetActive(true);
             Destroy(gameObject);
         }
     }

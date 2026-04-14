@@ -29,7 +29,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         healthText.text = "" + player.health;
-        StarSpawner();
+        if (fallingStar)
+        {
+            StarSpawner();
+        }
+
         if (isTimerOn)
         {
             timer += Time.deltaTime;

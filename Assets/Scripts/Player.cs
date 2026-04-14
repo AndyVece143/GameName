@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
         RealWorld,
         HitStun,
         Death,
+        SuperBounce,
     }
     public State state;
     public State initialState;
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip hurtSound;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip spinSound;
+    public float superBounceSpeed;
 
     private void Awake()
     {
@@ -77,6 +79,9 @@ public class Player : MonoBehaviour
                 break;
             case State.Death:
                 DeathMovement();
+                break;
+            case State.SuperBounce:
+                SuperBounceMovement();
                 break;
         }
     }
@@ -253,6 +258,27 @@ public class Player : MonoBehaviour
         body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce * 1.5f);
         bounce = true;
         SoundManager.instance.PlaySound(spinSound);
+    }
+
+    public void SuperBounce()
+    {
+        Debug.Log("Lep");
+        body.linearVelocity = new Vector2(-superBounceSpeed, jumpForce * 1.5f);
+        bounce = true;
+        state = State.SuperBounce;
+    }
+
+    public void SuperBounceMovement()
+    {
+        anim.SetBool("bounce", bounce);
+        anim.SetBool("grounded", IsGrounded());
+        anim.SetBool("falling", IsFalling());
+
+        if (IsGrounded())
+        {
+            state = State.Standard;
+            bounce = false;
+        }
     }
 
     public bool IsFalling()

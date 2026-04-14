@@ -22,6 +22,9 @@ public class BigDialogueTrigger : MonoBehaviour
     public CameraController mainCamera;
 
     private float dialogueTimer;
+    public bool isBossFightTrigger;
+    public bool afterBossFight;
+    public bool changeCameraState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,7 +42,7 @@ public class BigDialogueTrigger : MonoBehaviour
             return;
         }
 
-        if (player.IsGrounded())
+        if (player.IsGrounded() && afterBossFight == false)
         {
             dialogueTimer += Time.deltaTime;
 
@@ -73,6 +76,8 @@ public class BigDialogueTrigger : MonoBehaviour
                 {
                     newBigDialogue.character2.isActiveSpeaker = true;
                 }
+                newBigDialogue.isBossFightTrigger = isBossFightTrigger;
+                newBigDialogue.changeCameraState = changeCameraState;
                 triggered = true;
             }
 

@@ -1,10 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject regularUI;
+    public LevelLoader loader;
+
+    void Start()
+    {
+        loader = LevelLoader.FindAnyObjectByType<LevelLoader>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -36,5 +43,18 @@ public class PauseMenu : MonoBehaviour
         regularUI.SetActive(false);
         Time.timeScale = 0f;
         gameIsPaused = true;
+    }
+
+    public void RestartLevel()
+    {
+        Resume();
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        loader.LoadNextLevel(currentSceneName);
+    }
+
+    public void QuitToMenu()
+    {
+        Resume();
+        loader.LoadNextLevel("Title");
     }
 }

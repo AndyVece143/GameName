@@ -47,6 +47,10 @@ public class BigDialogue : MonoBehaviour
     public bool ready = false;
 
     private GameObject gameUI;
+    public bool isBossFightTrigger;
+    private Dad dad;
+    public bool changeCameraState;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -57,6 +61,10 @@ public class BigDialogue : MonoBehaviour
         textComponent.text = string.Empty;
         gameUI = GameObject.FindWithTag("GameUI");
         gameUI.gameObject.SetActive(false);
+        if (isBossFightTrigger)
+        {
+            dad = Dad.FindAnyObjectByType<Dad>();
+        }
         BeginningSprite();
         SetPositions();
         //StartDialogue();
@@ -283,8 +291,18 @@ public class BigDialogue : MonoBehaviour
             yield return null;
         }
         player.state = player.initialState;
-        mainCamera.state = mainCamera.initialState;
+
+        if (!changeCameraState)
+        {
+            mainCamera.state = mainCamera.initialState;
+        }
+
         gameUI.SetActive(true);
+
+        if (isBossFightTrigger)
+        {
+            dad.state = Dad.State.Fight;
+        }
         Destroy(gameObject);
     }
 }

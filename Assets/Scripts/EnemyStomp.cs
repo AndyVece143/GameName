@@ -10,16 +10,23 @@ public class EnemyStomp : MonoBehaviour
             {
                 case "Enemy":
                     collision.gameObject.GetComponentInParent<Pumpkin>().Death();
+                    GetComponentInParent<Player>().Bounce();
                     break;
                 case "Scarecrow":
                     collision.gameObject.GetComponentInParent<Scarecrow>().Death();
+                    GetComponentInParent<Player>().Bounce();
                     break;
                 case "Ghost":
                     collision.gameObject.GetComponentInParent<Ghost>().Death();
+                    GetComponentInParent<Player>().Bounce();
+                    break;
+                case "Dad":
+                    collision.gameObject.GetComponentInParent<Dad>().TakeDamage();
+                    GetComponentInParent<Player>().SuperBounce();
                     break;
             }
 
-            GetComponentInParent<Player>().Bounce();
+
         }
     }
 }

@@ -17,6 +17,7 @@ public class InteractableObject : MonoBehaviour
     public CameraController mainCamera;
     public bool sceneTransition;
     public string sceneName;
+    public bool gameUIRemover;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,6 +55,7 @@ public class InteractableObject : MonoBehaviour
                                 newDialogue.sceneTransition = sceneTransition;
                                 newDialogue.sceneName = sceneName;
                             }
+                            newDialogue.gameUIRemover = gameUIRemover;
                             break;
 
                         case false:

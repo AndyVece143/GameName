@@ -7,9 +7,10 @@ public class Door : MonoBehaviour
     public BoxCollider2D boxCollider;
     public bool interactable;
     public Vector3 teleportPoint;
-    public Camera bigCamera;
+    public CameraController bigCamera;
     public Vector3 cameraTeleportPoint;
     public DoorTransition doorTransition;
+    public bool changeCameraState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,6 +45,10 @@ public class Door : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
         player.transform.position = teleportPoint;
         bigCamera.transform.position = cameraTeleportPoint;
+        if (changeCameraState)
+        {
+            bigCamera.state = CameraController.State.StayStill;
+        }
         player.state = player.initialState;
     }
 }
