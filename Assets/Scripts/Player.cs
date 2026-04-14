@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip spinSound;
     public float superBounceSpeed;
 
+    public bool cannotJump;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -100,31 +102,35 @@ public class Player : MonoBehaviour
         body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
 
         //Jumping Code
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (!cannotJump)
         {
-            SoundManager.instance.PlaySound(jumpSound);
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            JumpForceMethod();
-        }
-
-        if (Input.GetKey(KeyCode.Space) && isJumping == true)
-        {
-            if (jumpTimeCounter > 0)
+            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
             {
+                SoundManager.instance.PlaySound(jumpSound);
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
                 JumpForceMethod();
-                jumpTimeCounter -= Time.deltaTime;
             }
-            else
+
+            if (Input.GetKey(KeyCode.Space) && isJumping == true)
+            {
+                if (jumpTimeCounter > 0)
+                {
+                    JumpForceMethod();
+                    jumpTimeCounter -= Time.deltaTime;
+                }
+                else
+                {
+                    isJumping = false;
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
             {
                 isJumping = false;
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-        }
 
         if (IsGrounded())
         {
@@ -400,7 +406,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Interact" && state != State.NoMove)
+        if (collision.gameObject.tag == "Interact" && state != State.NoMove && collision.gameObject.GetComponent<InteractableObject>().isAutomatic == false)
         {
             thoughtBubble.enabled = true;
         }

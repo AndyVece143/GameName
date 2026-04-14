@@ -34,7 +34,7 @@ public class InteractableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (boxCollider.IsTouching(player.boxCollider) && player.IsGrounded())
+        if (boxCollider.IsTouching(player.boxCollider) && player.IsGrounded() && !isAutomatic)
         {
             //player.thoughtBubble.enabled = true;
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))

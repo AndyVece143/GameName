@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class TitleScreen : MonoBehaviour
@@ -50,13 +49,18 @@ public class TitleScreen : MonoBehaviour
         loader.LoadNextLevel("Level1");
     }
 
+    public void WatchPrologue()
+    {
+        loader.LoadNextLevel("PrePrologue");
+    }
+
     IEnumerator MoveElements(bool right)
     {
         float time = 0;
-        float moveAmount = 20.99f;
+        float moveAmount = 18.51f;
         if (!right)
         {
-            moveAmount = -20.99f;
+            moveAmount = -18.51f;
         }
 
         Vector2 titleVector = new Vector2(mainTitle.transform.position.x + moveAmount, 0);

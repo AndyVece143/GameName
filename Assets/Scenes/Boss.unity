@@ -283,11 +283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8335984249971413454, guid: ee2987ab25f08e14b94983cffc62db12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 87.79
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8335984249971413454, guid: ee2987ab25f08e14b94983cffc62db12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8335984249971413454, guid: ee2987ab25f08e14b94983cffc62db12, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1174,7 +1174,7 @@ MonoBehaviour:
   straightShot: 0
   anim: {fileID: 0}
   damageTimer: 1
-  health: 1
+  health: 10
   trigger: {fileID: 45186928}
   state: 0
 --- !u!1001 &954506464
@@ -1191,7 +1191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 449407054894491032, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: char1
@@ -66005,8 +66005,9 @@ MonoBehaviour:
   react: 1
   mainCamera: {fileID: 1950620893}
   sceneTransition: 1
-  sceneName: Prologue
+  sceneName: Epilogue
   gameUIRemover: 1
+  isAutomatic: 0
 --- !u!61 &1734212029
 BoxCollider2D:
   m_ObjectHideFlags: 0

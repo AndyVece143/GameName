@@ -1,9 +1,6 @@
 using System.Collections;
 using TMPro;
-using Unity.VectorGraphics;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class BigDialogue : MonoBehaviour
 {

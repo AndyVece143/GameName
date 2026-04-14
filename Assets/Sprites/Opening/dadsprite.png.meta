@@ -17,6 +17,21 @@ TextureImporter:
   - first:
       213: -4050150556043110121
     second: dadsprite_4
+  - first:
+      213: 207318200348788545
+    second: dadsprite_5
+  - first:
+      213: -1885460658414038089
+    second: dadsprite_6
+  - first:
+      213: 3664838305150509843
+    second: dadsprite_7
+  - first:
+      213: -8752736596399009615
+    second: dadsprite_8
+  - first:
+      213: -2365593486431826816
+    second: dadsprite_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,7 +144,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 1
+        y: 68
         width: 48
         height: 66
       alignment: 0
@@ -151,7 +166,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 1
+        y: 68
         width: 48
         height: 66
       alignment: 0
@@ -173,7 +188,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 99
-        y: 1
+        y: 68
         width: 48
         height: 66
       alignment: 0
@@ -195,7 +210,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 148
-        y: 1
+        y: 68
         width: 48
         height: 66
       alignment: 0
@@ -217,7 +232,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 197
-        y: 1
+        y: 68
         width: 48
         height: 66
       alignment: 0
@@ -234,11 +249,121 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: dadsprite_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14743470eca80e200800000000000000
+      internalID: 207318200348788545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dadsprite_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b3d141558f75d5e0800000000000000
+      internalID: -1885460658414038089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dadsprite_7
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313adb9750f1cd230800000000000000
+      internalID: 3664838305150509843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dadsprite_8
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b053178078088680800000000000000
+      internalID: -8752736596399009615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dadsprite_9
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08cc04ee149bb2fd0800000000000000
+      internalID: -2365593486431826816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 96ea01de506193349b57bb058e3d86c7
+    spriteID: 9ab315334a642d2428b90a61582482c3
     internalID: 0
     vertices: []
     indices: 
@@ -255,6 +380,11 @@ TextureImporter:
       dadsprite_2: -7017689605574181039
       dadsprite_3: 8544518711749433072
       dadsprite_4: -4050150556043110121
+      dadsprite_5: 207318200348788545
+      dadsprite_6: -1885460658414038089
+      dadsprite_7: 3664838305150509843
+      dadsprite_8: -8752736596399009615
+      dadsprite_9: -2365593486431826816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
