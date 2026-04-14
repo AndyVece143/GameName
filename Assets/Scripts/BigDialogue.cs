@@ -50,6 +50,9 @@ public class BigDialogue : MonoBehaviour
     public bool isBossFightTrigger;
     private Dad dad;
     public bool changeCameraState;
+    public bool sceneTransition;
+    public LevelLoader loader;
+    public string sceneName;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -64,6 +67,11 @@ public class BigDialogue : MonoBehaviour
         if (isBossFightTrigger)
         {
             dad = Dad.FindAnyObjectByType<Dad>();
+        }
+
+        if (sceneTransition)
+        {
+            loader = LevelLoader.FindAnyObjectByType<LevelLoader>();
         }
         BeginningSprite();
         SetPositions();
@@ -290,6 +298,11 @@ public class BigDialogue : MonoBehaviour
             textBox.transform.position = Vector3.Lerp(textBox.transform.position, textBoxEndPosition, time / moveDuration);
             yield return null;
         }
+        if (sceneTransition)
+        {
+            loader.LoadNextLevel(sceneName);
+        }
+
         player.state = player.initialState;
 
         if (!changeCameraState)

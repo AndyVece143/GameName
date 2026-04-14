@@ -26,6 +26,7 @@ public class Dialogue : MonoBehaviour
 
     public bool gameUIRemover;
     private GameObject gameUI;
+    public CameraController mainCamera;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,6 +35,7 @@ public class Dialogue : MonoBehaviour
         canvas.worldCamera = Camera.main;
         player = Player.FindAnyObjectByType<Player>();
         loader = LevelLoader.FindAnyObjectByType<LevelLoader>();
+        mainCamera = CameraController.FindAnyObjectByType<CameraController>();
         textComponent.text = string.Empty;
 
         if (gameUIRemover)
@@ -167,7 +169,12 @@ public class Dialogue : MonoBehaviour
                 interactableObject.interactable = true;
             }
             player.state = player.initialState;
-            gameUI.SetActive(true);
+            mainCamera.state = mainCamera.initialState;
+            if (gameUIRemover)
+            {
+                gameUI.SetActive(true);
+            }
+
             Destroy(gameObject);
         }
     }

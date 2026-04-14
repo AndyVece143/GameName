@@ -18,6 +18,9 @@ public class InteractableObject : MonoBehaviour
     public bool sceneTransition;
     public string sceneName;
     public bool gameUIRemover;
+    //public bool isCutscene;
+    public bool isAutomatic;
+    private bool triggered = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -70,5 +73,35 @@ public class InteractableObject : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!isAutomatic && triggered)
+        {
+            return;
+        }
+
+        if (interactable && player.IsGrounded() && isAutomatic && !triggered)
+        {
+            interactable = false;
+            mainCamera.state = CameraController.State.StayStill;
+            //player.thoughtBubble.enabled = false;
+            interactable = false;
+            player.StopMoving(react);
+            player.state = Player.State.NoMove;
+            Dialogue newDialogue = Instantiate(dialogue);
+            newDialogue.lines = dialogueLines;
+            newDialogue.interactableObject = this;
+            if (sceneTransition == true)
+            {
+                newDialogue.sceneTransition = sceneTransition;
+                newDialogue.sceneName = sceneName;
+            }
+            newDialogue.gameUIRemover = gameUIRemover;
+
+            triggered = true;
+        }
+
     }
 }

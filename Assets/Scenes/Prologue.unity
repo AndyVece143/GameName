@@ -154,9 +154,10 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   interactable: 0
   teleportPoint: {x: 35.47, y: -1.705544, z: 0}
-  bigCamera: {fileID: 519420031}
+  bigCamera: {fileID: 519420037}
   cameraTeleportPoint: {x: 40, y: 0, z: -10}
   doorTransition: {fileID: 903690157}
+  changeCameraState: 0
 --- !u!61 &29431433
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -486,6 +487,9 @@ MonoBehaviour:
   char1: {fileID: 8784599758288289809, guid: 0e8c84317920670499d92d1da5383758, type: 3}
   char2: {fileID: 357313892532197023, guid: 52d9fdecabfa68a49af2a68c5d83d073, type: 3}
   mainCamera: {fileID: 0}
+  isBossFightTrigger: 0
+  afterBossFight: 0
+  changeCameraState: 0
 --- !u!61 &70513226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2398,6 +2402,8 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   sceneTransition: 0
   sceneName: 
+  gameUIRemover: 0
+  isAutomatic: 0
 --- !u!61 &1377028672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3459,7 +3465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: sceneName
-      value: Level1
+      value: ProPrologue
       objectReference: {fileID: 0}
     - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
       propertyPath: isDialogue
@@ -3690,9 +3696,10 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   interactable: 0
   teleportPoint: {x: 28, y: -1.705544, z: 0}
-  bigCamera: {fileID: 519420031}
+  bigCamera: {fileID: 519420037}
   cameraTeleportPoint: {x: 20, y: 0, z: -10}
   doorTransition: {fileID: 903690157}
+  changeCameraState: 0
 --- !u!61 &2124880450
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4040,6 +4047,22 @@ PrefabInstance:
     - target: {fileID: 185504328017299270, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681061952323358566, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_TagString
+      value: GameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916765673840034717, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916765673840034717, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007664050767602417, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6960768883092497130, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
       propertyPath: m_Pivot.x

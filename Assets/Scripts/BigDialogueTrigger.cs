@@ -25,6 +25,8 @@ public class BigDialogueTrigger : MonoBehaviour
     public bool isBossFightTrigger;
     public bool afterBossFight;
     public bool changeCameraState;
+    public bool sceneTransition;
+    public string sceneName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -78,6 +80,8 @@ public class BigDialogueTrigger : MonoBehaviour
                 }
                 newBigDialogue.isBossFightTrigger = isBossFightTrigger;
                 newBigDialogue.changeCameraState = changeCameraState;
+                newBigDialogue.sceneTransition = sceneTransition;
+                newBigDialogue.sceneName = sceneName;
                 triggered = true;
             }
 
