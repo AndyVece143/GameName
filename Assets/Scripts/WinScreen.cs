@@ -16,6 +16,7 @@ public class WinScreen : MonoBehaviour
 
     public LevelLoader loader;
     public string sceneName;
+    public Player player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +25,7 @@ public class WinScreen : MonoBehaviour
         canvas.worldCamera = Camera.main;
         loader = LevelLoader.FindAnyObjectByType<LevelLoader>();
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
+        player = Player.FindAnyObjectByType<Player>();
         gameManager.StopTimer();
         SetPosition();
         SetText();
@@ -79,7 +81,7 @@ public class WinScreen : MonoBehaviour
             textBox.transform.position = Vector3.Lerp(textBox.transform.position, textBoxEndPosition, time / duration);
             yield return null;
         }
-
+        StaticData.playerDefense = player.defense;
         loader.LoadNextLevel(sceneName);
     }
 }

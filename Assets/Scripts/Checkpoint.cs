@@ -7,6 +7,7 @@ public class Checkpoint : MonoBehaviour
     private float distance;
     private bool active = false;
     public Animator anim;
+    public AudioClip sound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,8 +29,10 @@ public class Checkpoint : MonoBehaviour
         distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
         if (distance <= 0.5f && active == false)
         {
+            SoundManager.instance.PlaySound(sound);
             active = true;
             gameManager.activeCheckpoint = this;
+            player.health = 10;
         }
     }
 }

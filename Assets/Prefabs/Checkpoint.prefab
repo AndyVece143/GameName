@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
   anim: {fileID: 134908119260091389}
+  sound: {fileID: 8300000, guid: 8ff3201370704074ea752c3d935c0dbe, type: 3}
 --- !u!95 &134908119260091389
 Animator:
   serializedVersion: 7

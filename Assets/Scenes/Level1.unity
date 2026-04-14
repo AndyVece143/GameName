@@ -435,6 +435,7 @@ Transform:
   m_Children:
   - {fileID: 632012601}
   - {fileID: 1948461509}
+  - {fileID: 2011331424}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &87703528
@@ -57804,36 +57805,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: lines.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: changes.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'lines.Array.data[0]'
-      value: So, I've heard of this YouTuber called Adrotic. Do you know anything
-        about them?
+      value: Do you feel any different?
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'lines.Array.data[1]'
-      value: Are you kidding? Adrotic is one of the best YouTubers out there!
+      value: Yes, I feel a little stronger. It's not alot, but it's something.
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'lines.Array.data[2]'
-      value: They made great videos about art and stuff. They even have their own
-        lore!
+      value: Let's keep it up. You're gonna need to be a whole lot tougher for when
+        we fight your father.
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'lines.Array.data[3]'
-      value: Adrotic is my favorite they/them.
+      value: ...wait, my father is here? And I have to fight him?
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'lines.Array.data[4]'
-      value: I do like a good they/them.
+      value: Relax, it's not really him. It's just a version created by your struggles.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
+      propertyPath: 'lines.Array.data[5]'
+      value: 'I guess literally fighting my father will help me prepare to confront
+        him. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
+      propertyPath: 'lines.Array.data[6]'
+      value: Exactly. Now, let's get a move on.
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'changes.Array.data[1]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
+      propertyPath: 'changes.Array.data[2]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
+      propertyPath: 'changes.Array.data[3]'
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
@@ -57841,24 +57858,40 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
+      propertyPath: 'changes.Array.data[5]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
+      propertyPath: 'changes.Array.data[6]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: emotionChanges.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'emotionChanges.Array.data[1]'
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'emotionChanges.Array.data[2]'
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'emotionChanges.Array.data[3]'
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: 'emotionChanges.Array.data[4]'
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
+      propertyPath: 'emotionChanges.Array.data[5]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599949493136733232, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
+      propertyPath: 'emotionChanges.Array.data[6]'
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5853417514905734336, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: m_LocalScale.y
@@ -57866,11 +57899,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5853417514905734336, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.79
+      value: 70.99
       objectReference: {fileID: 0}
     - target: {fileID: 5853417514905734336, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.78
+      value: 11.1
       objectReference: {fileID: 0}
     - target: {fileID: 5853417514905734336, guid: a310180629dcc7c45a5144e04a09cef7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -59564,6 +59597,97 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6231986539487319108, guid: ecbb211e0d76ea64ba3e5c9e75ce7969, type: 3}
   m_PrefabInstance: {fileID: 1995936151}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2011331423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011331424}
+  - component: {fileID: 2011331425}
+  m_Layer: 0
+  m_Name: Square
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2011331424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011331423}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1881, y: 10.1603, z: 0}
+  m_LocalScale: {x: 56.255024, y: 9.6007, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 87703527}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2011331425
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011331423}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.13725491, g: 0.058823533, b: 0.24705884, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1001 &2013119834
 PrefabInstance:
   m_ObjectHideFlags: 0

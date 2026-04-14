@@ -1176,6 +1176,8 @@ MonoBehaviour:
   damageTimer: 1
   health: 10
   trigger: {fileID: 45186928}
+  shootSound: {fileID: 8300000, guid: 1f1c9ae79f4e9444f9e1cd309ce5d316, type: 3}
+  damageSound: {fileID: 8300000, guid: d8bb47af4d702e844a608b7bd65dd701, type: 3}
   state: 0
 --- !u!1001 &954506464
 PrefabInstance:

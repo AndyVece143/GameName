@@ -16,6 +16,8 @@ public class Dad : MonoBehaviour
     private float damageTimerMax;
     public int health = 10;
     public BigDialogueTrigger trigger;
+    public AudioClip shootSound;
+    public AudioClip damageSound;
     public enum State
     {
         Standard,
@@ -76,6 +78,7 @@ public class Dad : MonoBehaviour
 
         if (shootTimer <= 0)
         {
+            SoundManager.instance.PlaySound(shootSound);
             switch (straightShot)
             {
                 case true:
@@ -147,6 +150,7 @@ public class Dad : MonoBehaviour
 
     public void TakeDamage()
     {
+        SoundManager.instance.PlaySound(damageSound);
         health--;
         if (health == 0)
         {

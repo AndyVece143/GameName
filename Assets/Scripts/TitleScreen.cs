@@ -16,6 +16,7 @@ public class TitleScreen : MonoBehaviour
     {
         Debug.Log(mainTitle.transform.position);
         Debug.Log(credits.transform.position);
+        StaticData.playerDefense = 0;
     }
 
     // Update is called once per frame
