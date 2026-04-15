@@ -268,7 +268,6 @@ public class Player : MonoBehaviour
 
     public void SuperBounce()
     {
-        Debug.Log("Lep");
         body.linearVelocity = new Vector2(-superBounceSpeed, jumpForce * 1.5f);
         bounce = true;
         state = State.SuperBounce;

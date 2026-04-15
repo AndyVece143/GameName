@@ -1257,7 +1257,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   body: {fileID: 0}
   laser: {fileID: 4277773715803022675, guid: f0f9127ee9b1a36409daefa2ec0eecb1, type: 3}
-  shootTimer: 1.2
+  shootTimer: 0.7
   player: {fileID: 0}
   laserSpawn: {fileID: 1639902402}
   facingRight: 1
@@ -66073,7 +66073,7 @@ GameObject:
   - component: {fileID: 1734212028}
   m_Layer: 0
   m_Name: Interactable Object
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66102,7 +66102,7 @@ MonoBehaviour:
   react: 1
   mainCamera: {fileID: 1950620893}
   sceneTransition: 1
-  sceneName: Epilogue
+  sceneName: PreEpilogue
   gameUIRemover: 1
   isAutomatic: 0
 --- !u!61 &1734212029

@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &26297775 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1915202966150913531, guid: fc926a3c526be0b428c8d95fe47720d3, type: 3}
-  m_PrefabInstance: {fileID: 5956464834649793027}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff85620a31b15441b6dcdf82e1bb67a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!1 &29431431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,87 +3045,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2132962279
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1179174765805538187, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_Name
-      value: Interactable Object
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.41431108
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 44.1691
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.108
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4076121651367864045, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 26297775}
-    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: isDialogue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: isAutomatic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: dialogueLines.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4965353625298158766, guid: 442473880b3fb86478972619de29c8aa, type: 3}
-      propertyPath: 'dialogueLines.Array.data[0]'
-      value: Alright, today's the day! Time to talk some sense into my dad!
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 442473880b3fb86478972619de29c8aa, type: 3}
 --- !u!1001 &4982513765829639874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3309,7 +3217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5916765673840034717, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 16777215
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6007664050767602417, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
       propertyPath: m_Color.a
@@ -3431,11 +3339,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8335984249971413454, guid: fc926a3c526be0b428c8d95fe47720d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 45.16
+      value: 44.71
       objectReference: {fileID: 0}
     - target: {fileID: 8335984249971413454, guid: fc926a3c526be0b428c8d95fe47720d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.67
+      value: -1.66
       objectReference: {fileID: 0}
     - target: {fileID: 8335984249971413454, guid: fc926a3c526be0b428c8d95fe47720d3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3667,4 +3575,3 @@ SceneRoots:
   - {fileID: 1238964756}
   - {fileID: 1394751566}
   - {fileID: 6466901467448301052}
-  - {fileID: 2132962279}

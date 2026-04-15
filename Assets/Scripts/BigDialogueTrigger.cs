@@ -44,7 +44,7 @@ public class BigDialogueTrigger : MonoBehaviour
             return;
         }
 
-        if (player.IsGrounded() && afterBossFight == false)
+        if (collision.tag == "Player" && player.IsGrounded() && afterBossFight == false)
         {
             dialogueTimer += Time.deltaTime;
 
