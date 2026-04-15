@@ -18,6 +18,9 @@ public class Dad : MonoBehaviour
     public BigDialogueTrigger trigger;
     public AudioClip shootSound;
     public AudioClip damageSound;
+    public BoxCollider2D weakpoint;
+    public Stars stars;
+    public MusicPlayer musicPlayer;
     public enum State
     {
         Standard,
@@ -146,16 +149,22 @@ public class Dad : MonoBehaviour
         {
             Rotate();
         }
+
+        
     }
 
     public void TakeDamage()
     {
         SoundManager.instance.PlaySound(damageSound);
         health--;
-        if (health == 0)
+        if (health <= 0)
         {
             state = State.Defeat;
+            musicPlayer.StopSong();
             trigger.afterBossFight = false;
+            Stars newStars = Instantiate(stars);
+            newStars.transform.position = gameObject.transform.position;
+            Destroy(gameObject);
             return;
         }
 
@@ -174,5 +183,11 @@ public class Dad : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.white;
             anim.SetBool("hurt", false);
         }
+    }
+
+    public void StartFight()
+    {
+        state = State.Fight;
+        musicPlayer.BossTime();
     }
 }

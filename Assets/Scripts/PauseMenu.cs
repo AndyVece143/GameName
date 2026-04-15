@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         loader = LevelLoader.FindAnyObjectByType<LevelLoader>();
+        regularUI = GameObject.FindWithTag("GameUI");
     }
 
     // Update is called once per frame

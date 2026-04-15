@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681061952323358566, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
       propertyPath: m_TagString
-      value: GameUI
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6960768883092497130, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
       propertyPath: m_Pivot.x
@@ -261,6 +261,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &87315513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9044012507990389119, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+  m_PrefabInstance: {fileID: 87315510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &87315514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1795267795863480438, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+  m_PrefabInstance: {fileID: 87315510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &90341362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8100206416998298667, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+  m_PrefabInstance: {fileID: 417913470}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 723ceb6b847f36446bf7c429de21d689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicPlayer
 --- !u!1001 &130016013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -356,7 +389,7 @@ GameObject:
   - component: {fileID: 170231029}
   m_Layer: 0
   m_Name: graydoor_0
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -592,6 +625,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &417913470
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4857
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.22083
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091684197204912799, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047023694478089359, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
+      propertyPath: m_Name
+      value: Music Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b74634f5965d6747a8252f10813cac6, type: 3}
 --- !u!1 &576717964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,17 +1257,20 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   body: {fileID: 0}
   laser: {fileID: 4277773715803022675, guid: f0f9127ee9b1a36409daefa2ec0eecb1, type: 3}
-  shootTimer: 0.5
+  shootTimer: 1.2
   player: {fileID: 0}
   laserSpawn: {fileID: 1639902402}
   facingRight: 1
   straightShot: 0
   anim: {fileID: 0}
   damageTimer: 1
-  health: 10
+  health: 5
   trigger: {fileID: 45186928}
   shootSound: {fileID: 8300000, guid: 1f1c9ae79f4e9444f9e1cd309ce5d316, type: 3}
   damageSound: {fileID: 8300000, guid: d8bb47af4d702e844a608b7bd65dd701, type: 3}
+  weakpoint: {fileID: 0}
+  stars: {fileID: 4350444048787575334, guid: c7e046cace3c85c48b1f50baf47185c9, type: 3}
+  musicPlayer: {fileID: 90341362}
   state: 0
 --- !u!1001 &954506464
 PrefabInstance:
@@ -2469,6 +2562,8 @@ MonoBehaviour:
   fallingStar: {fileID: 0}
   coinAmount: 0
   timer: 0
+  defenseText: {fileID: 87315514}
+  coinText: {fileID: 87315513}
 --- !u!4 &1382361079
 Transform:
   m_ObjectHideFlags: 0
@@ -69960,3 +70055,4 @@ SceneRoots:
   - {fileID: 170231032}
   - {fileID: 201205515}
   - {fileID: 1734212031}
+  - {fileID: 417913470}

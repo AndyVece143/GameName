@@ -3289,7 +3289,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681061952323358566, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
       propertyPath: m_TagString
-      value: GameUI
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795267795863480438, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795267795863480438, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747980986146808320, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5916765673840034717, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
       propertyPath: m_fontColor.a
@@ -3300,6 +3312,10 @@ PrefabInstance:
       value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 6007664050767602417, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695442388515431567, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
@@ -3387,6 +3403,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 9044012507990389119, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044012507990389119, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7803536439436533219, guid: cbc66102007701f4f8bafe523e16b0e2, type: 3}

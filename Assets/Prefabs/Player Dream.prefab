@@ -229,7 +229,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  jumpTime: 0.3
+  jumpTime: 0.37
   jumpTimeCounter: 0
   health: 10
   defense: 0
@@ -246,6 +246,8 @@ MonoBehaviour:
   hurtSound: {fileID: 8300000, guid: b6d9cf4f62492274b94a8066145aa529, type: 3}
   deathSound: {fileID: 8300000, guid: 6f729dcef3997a94fba1520f36010061, type: 3}
   spinSound: {fileID: 8300000, guid: 7e8a03e569e0f77488adbb7cbfbf1c7d, type: 3}
+  superBounceSpeed: 0
+  cannotJump: 0
 --- !u!50 &4873581914531252973
 Rigidbody2D:
   serializedVersion: 5
@@ -307,7 +309,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.18}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -317,7 +319,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7, y: 1.84}
+  m_Size: {x: 0.7, y: 1.46}
   m_EdgeRadius: 0
 --- !u!1 &3753934861802869709
 GameObject:

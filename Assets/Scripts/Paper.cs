@@ -28,6 +28,8 @@ public class Paper : MonoBehaviour
     public GameObject textBox;
     public float textBoxDuration;
     private Vector3 textBoxPosition;
+    private bool spaceClick = true;
+    private GameObject gameUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,6 +39,8 @@ public class Paper : MonoBehaviour
         player = Player.FindAnyObjectByType<Player>();
         mainCamera = CameraController.FindAnyObjectByType<CameraController>();
         textComponent.text = string.Empty;
+        gameUI = GameObject.FindWithTag("GameUI");
+        gameUI.gameObject.SetActive(false);
         SetPositionAndTrans();
     }
 
@@ -45,11 +49,12 @@ public class Paper : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
-            if (ready == true)
+            if (ready == true && spaceClick == true)
             {
+                spaceClick = false;
                 StartCoroutine(MoveTextBox());
             }
-            else
+            else if (spaceClick == true)
             {
                 StopAllCoroutines();
                 textComponent.text = text;
@@ -118,6 +123,7 @@ public class Paper : MonoBehaviour
         player.state = player.initialState;
         mainCamera.state = mainCamera.initialState;
         player.defense++;
+        gameUI.gameObject.SetActive(true);
         Destroy(gameObject);
     }
 

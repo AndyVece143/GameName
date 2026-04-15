@@ -218,13 +218,15 @@ MonoBehaviour:
   raycastDistance: 1.5
   wallDistance: 0.3
   sightDistance: 8
+  facingRight: 1
   player: {fileID: 0}
   jumpForce: 7
   raycastLayers:
     serializedVersion: 2
     m_Bits: 72
   stars: {fileID: 4350444048787575334, guid: c7e046cace3c85c48b1f50baf47185c9, type: 3}
-  damage: 3
+  damage: 6
+  laugh: {fileID: 8300000, guid: 3397d26e64cf04140a85a69f97beb029, type: 3}
   state: 0
 --- !u!50 &2651996739837975287
 Rigidbody2D:

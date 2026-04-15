@@ -311,7 +311,7 @@ public class BigDialogue : MonoBehaviour
 
         if (isBossFightTrigger)
         {
-            dad.state = Dad.State.Fight;
+            dad.StartFight();
         }
         Destroy(gameObject);
     }

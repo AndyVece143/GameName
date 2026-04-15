@@ -25,6 +25,7 @@ public class Ghost : MonoBehaviour
     public Stars stars;
     public int damage;
     private Quaternion initialRotation;
+    public AudioClip laugh;
 
     public enum State
     {
@@ -137,8 +138,9 @@ public class Ghost : MonoBehaviour
 
         if (detection.collider != null)
         {
-            if (detection.collider.CompareTag("Player"))
+            if (detection.collider.CompareTag("Player") && state != State.Pursuing)
             {
+                SoundManager.instance.PlaySound(laugh);
                 state = State.Pursuing;
             }
         }

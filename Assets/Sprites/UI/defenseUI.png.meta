@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 08d3d2f31a9043c49a1abf6d7a47c150
+guid: 979e0fd22f507e14abf694e816f2601e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8327914307785517070
-    second: healthUI_0
+      213: -6783813209910895162
+    second: defenseUI_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: healthUI_0
+      name: defenseUI_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f71d8c6f0e4d6c80800000000000000
-      internalID: -8327914307785517070
+      spriteID: 6cd98a8e3dd0bd1a0800000000000000
+      internalID: -6783813209910895162
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      healthUI_0: -8327914307785517070
+      defenseUI_0: -6783813209910895162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

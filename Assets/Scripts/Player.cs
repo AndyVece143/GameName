@@ -301,7 +301,7 @@ public class Player : MonoBehaviour
 
     public bool IsCrouching()
     {
-        if (IsGrounded() && body.linearVelocity.x == 0 && Input.GetKeyDown(KeyCode.DownArrow))
+        if (IsGrounded() && body.linearVelocity.x == 0 && (Input.GetKeyDown(KeyCode.DownArrow)) || Input.GetKeyDown(KeyCode.S))
         {
             return true;
         }
@@ -313,7 +313,7 @@ public class Player : MonoBehaviour
 
     public bool IsStillCrouching()
     {
-        if (IsGrounded() && body.linearVelocity.x == 0 && Input.GetKey(KeyCode.DownArrow))
+        if (IsGrounded() && body.linearVelocity.x == 0 && (Input.GetKey(KeyCode.DownArrow)) || Input.GetKey(KeyCode.S))
         {
             return true;
         }
@@ -328,7 +328,7 @@ public class Player : MonoBehaviour
         switch (b)
         {
             case true:
-                if (IsGrounded() && body.linearVelocity.x == 0 && Input.GetKeyDown(KeyCode.UpArrow))
+                if (IsGrounded() && body.linearVelocity.x == 0 && (Input.GetKeyDown(KeyCode.UpArrow)) || Input.GetKeyDown(KeyCode.W))
                 {
                     return true;
                 }
@@ -338,7 +338,7 @@ public class Player : MonoBehaviour
                 }
 
             case false:
-                if (IsGrounded() && body.linearVelocity.x == 0 && Input.GetKey(KeyCode.UpArrow))
+                if (IsGrounded() && body.linearVelocity.x == 0 && (Input.GetKey(KeyCode.UpArrow)) || Input.GetKey(KeyCode.W))
                 {
                     return true;
                 }

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public int coinAmount;
     public float timer;
     private bool isTimerOn = true;
+    public TMP_Text defenseText;
+    public TMP_Text coinText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,6 +40,9 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+
+        defenseText.text = "" + player.defense;
+        coinText.text = "" + coinAmount;
     }
 
     public void RespawnPlayer()
