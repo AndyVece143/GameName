@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2742510926575786489}
   - component: {fileID: 5222703110747882013}
   - component: {fileID: 5843349057151280885}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pumpkin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4047013008164235681}
   - component: {fileID: 3613715110477180917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}

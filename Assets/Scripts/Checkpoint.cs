@@ -8,6 +8,7 @@ public class Checkpoint : MonoBehaviour
     private bool active = false;
     public Animator anim;
     public AudioClip sound;
+    private BoxCollider2D boxCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,12 +16,13 @@ public class Checkpoint : MonoBehaviour
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
         player = Player.FindAnyObjectByType<Player>();
         anim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerDistance();
+        //PlayerDistance();
         anim.SetBool("active", active);
     }
 
@@ -28,6 +30,17 @@ public class Checkpoint : MonoBehaviour
     {
         distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
         if (distance <= 0.5f && active == false)
+        {
+            SoundManager.instance.PlaySound(sound);
+            active = true;
+            gameManager.activeCheckpoint = this;
+            player.health = 10;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" && active == false)
         {
             SoundManager.instance.PlaySound(sound);
             active = true;

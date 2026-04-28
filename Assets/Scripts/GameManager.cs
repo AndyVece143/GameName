@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator RespawnPlayerWaiter()
     {
         doorTransition.DoTransition();
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1.03f);
         RespawnPlayer();
     }
 }

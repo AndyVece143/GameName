@@ -155,6 +155,7 @@ public class Player : MonoBehaviour
         else
         {
             GetComponent<SpriteRenderer>().color = Color.white;
+            Physics2D.IgnoreLayerCollision(6, 7, false);
         }
 
 
@@ -223,6 +224,7 @@ public class Player : MonoBehaviour
 
     private void KnockBack()
     {
+        Physics2D.IgnoreLayerCollision(6, 7);
         if (IsFacingRight())
         {
             body.linearVelocity = new Vector2(-3f, 5f);
@@ -450,7 +452,6 @@ public class Player : MonoBehaviour
                 TakeDamage(collision.gameObject.GetComponent<Ghost>().damage);
             }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
